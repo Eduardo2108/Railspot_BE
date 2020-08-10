@@ -4,7 +4,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/routes")
-class Trips {
+public class Travel {
 
     @GET
     @Consumes(MediaType.TEXT_PLAIN)

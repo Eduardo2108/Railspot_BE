@@ -11,7 +11,9 @@ public class RestService extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         Set<Class<?>> classes = new HashSet<>();
-        classes.add(Trips.class);
+        classes.add(Travel.class);
+        classes.add(Admin.class);
+        classes.add(Reservations.class);
         return classes;
     }
 }
