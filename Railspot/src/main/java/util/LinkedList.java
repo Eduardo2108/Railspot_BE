@@ -1,5 +1,7 @@
 package util;
 
+import javax.swing.*;
+
 public class LinkedList<T extends Comparable<T>> {
 
     public int len = 0;
@@ -19,7 +21,19 @@ public class LinkedList<T extends Comparable<T>> {
             this.len++;
         }
     }
-
+    public void addFirst(T data){
+        Node<T> newElement = new Node<>(data);
+        if (this.head == null) {
+            this.head = this.tail = newElement;
+            this.len++;
+        }
+        else{
+            newElement.setNext(this.head);
+            this.head.setPrev(newElement);
+            this.head = newElement;
+            this.len ++;
+        }
+    }
     @Override
     public String toString() {
         return "LinkedList{" +

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Gradle : com.tec.ce1103.railspot : railspot-1.0.war (exploded)">
+    <output-path>$PROJECT_DIR$/build/libs/exploded/railspot-1.0.war</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="railspot.main/web/Web Gradle : railspot-1.0.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="railspot.main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
