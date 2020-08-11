@@ -36,7 +36,7 @@ public class Graph<T extends Comparable<T>> {
             Vertex<T> var1 = this.elements.getElement(new Vertex<>(node1));
             Vertex<T> var2 = this.elements.getElement(new Vertex<>(node2));
             //verify
-            if(var1 == null || var2== null) return;
+            if (var1 == null || var2 == null) return;
             //connect on one way
             var1.connect(var2, weight);
         } catch (NullPointerException ignored) {
@@ -62,7 +62,7 @@ public class Graph<T extends Comparable<T>> {
 
         @Override
         public String toString() {
-            return "Vertex{" +
+            return "Vertex{ " + this.hashCode() + "||" +
                     "data=" + data +
                     ", edges=" + edges +
                     '}';
@@ -107,7 +107,7 @@ public class Graph<T extends Comparable<T>> {
         public String toString() {
             return "Edge{" +
                     "weight=" + weight +
-                    ", connection=" + ((connection != null) ? connection.getData() : "" +
+                    ", connection=" + ((connection != null) ? connection.hashCode() : "" +
                     "") +
                     '}';
         }
