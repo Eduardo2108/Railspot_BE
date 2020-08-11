@@ -89,7 +89,9 @@ public class Graph<T extends Comparable<T>> {
         Vertex<T> sourceNode = this.elements.getElement(new Vertex<>(source));
         //initialize the list for the algorithm
         LinkedList<DijkstraHelper<Vertex<T>>> results = new LinkedList<>();
-        results.addFirst(new DijkstraHelper<>(sourceNode));
+        DijkstraHelper<Vertex<T>> sourceHelper = new DijkstraHelper<>(sourceNode);
+        sourceHelper.setWeight(0);
+        results.addFirst(sourceHelper);
         for (int i = 0; i < this.elements.len; i++) {
             if (elements.getElement(i).compareTo(sourceNode) != 0) {
                 //create a new instance with the content of the node, for each node on the list of elements in the graph

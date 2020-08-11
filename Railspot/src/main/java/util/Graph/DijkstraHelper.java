@@ -23,6 +23,16 @@ class DijkstraHelper<T extends Comparable<T>> implements Comparable<DijkstraHelp
      */
     boolean visited;
 
+    @Override
+    public String toString() {
+        return "DijkstraHelper{" +
+                "weight=" + weight +
+                ", pre=" + pre +
+                ", node=" + node +
+                ", visited=" + visited +
+                '}';
+    }
+
     public DijkstraHelper(T node) {
         this.node = node;
         this.pre = null;

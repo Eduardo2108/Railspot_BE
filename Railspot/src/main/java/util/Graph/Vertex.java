@@ -28,7 +28,7 @@ class Vertex<T extends Comparable<T>> implements Comparable<Vertex<T>> {
     }
 
     public T getData() {
-        return data;
+        return this.data;
     }
 
     public void setData(T data) {
