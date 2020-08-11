@@ -1,4 +1,5 @@
 package rest;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -20,4 +21,7 @@ public class Travel {
         return Response.status(Response.Status.NOT_IMPLEMENTED).entity("Aca va el json con el resultado de la wea").type(MediaType.APPLICATION_JSON_TYPE).build();
 
     }
+    /*
+
+     */
 }

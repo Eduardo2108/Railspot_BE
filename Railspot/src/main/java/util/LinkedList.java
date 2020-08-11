@@ -22,17 +22,11 @@ public class LinkedList<T extends Comparable<T>> {
 
     @Override
     public String toString() {
-        StringBuilder string = new StringBuilder();
-        Node<T> temp = this.head;
-        int counter = 0;
-        string.append("[ ");
-        while (counter < this.len) {
-            string.append(temp.getData() + " ");
-            temp = temp.getNext();
-            counter++;
-        }
-        string.append("]");
-        return string.toString();
+        return "LinkedList{" +
+                "len=" + len +
+                ", head=" + head +
+
+                '}';
     }
 
     //get an element by index
@@ -90,18 +84,25 @@ public class LinkedList<T extends Comparable<T>> {
 
     //delete an node
     public void delete(T data) {
+        //only head
+        if(this.len ==1){
+            this.head = this.tail = null;
+            this.len = 0;
+        }
+        //delete head
         if (this.head.getData().compareTo(data) == 0) {
             this.head = this.head.next;
             this.head.getPrev().setNext(null);
             this.head.setPrev(null);
-            this.len--;
+        //delete tail node
         } else if (this.tail.getData().compareTo(data) == 0) {
             this.tail = this.tail.getPrev();
             this.tail.setNext(null);
-            this.len--;
+        //delete middle
         } else {
             Node<T> toDelete = this.getNode(data);
             if (toDelete == null) {
+                System.out.println("Node not found to delete.");
                 return;
             }
             Node<T> prev = toDelete.getPrev();
@@ -109,8 +110,9 @@ public class LinkedList<T extends Comparable<T>> {
             prev.setNext(next);
             next.setPrev(prev);
             toDelete.delete();
-            this.len--;
+
         }
+        this.len--;
     }
 
     class Node<T extends Comparable<T>> {
@@ -120,7 +122,10 @@ public class LinkedList<T extends Comparable<T>> {
 
         @Override
         public String toString() {
-            return data.toString();
+            return "Node{" +
+                    "next=" + next +
+                    ", data=" + data +
+                    '}';
         }
 
         public Node(T data) {

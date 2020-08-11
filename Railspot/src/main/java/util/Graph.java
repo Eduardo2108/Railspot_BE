@@ -2,7 +2,7 @@ package util;
 
 
 public class Graph<T extends Comparable<T>> {
-    private final int len;
+    private int len;
     private final LinkedList<Vertex<T>> elements;
 
     public Graph() {
@@ -12,16 +12,35 @@ public class Graph<T extends Comparable<T>> {
 
     public void addElement(T data) {
         //verificar que no este repetido
+        this.len++;
         this.elements.add(new Vertex<>(data));
+    }
+
+    public void deleteElement(T element) {
+        this.len--;
+        this.elements.delete(new Vertex<>(element));
+    }
+
+    public void disconnec(T node1, T node2) {
+        try {
+            Vertex<T> var1 = this.elements.getElement(new Vertex<>(node1));
+            Vertex<T> var2 = this.elements.getElement(new Vertex<>(node2));
+            //disconect a node from another
+            var1.disconnect(var2);
+        } catch (NullPointerException ignored) {
+        }
     }
 
     public void connect(T node1, T node2, int weight) {
         try {
             Vertex<T> var1 = this.elements.getElement(new Vertex<>(node1));
             Vertex<T> var2 = this.elements.getElement(new Vertex<>(node2));
+            //verify
+            if(var1 == null || var2== null) return;
             //connect on one way
             var1.connect(var2, weight);
         } catch (NullPointerException ignored) {
+
         }
     }
 
@@ -30,7 +49,7 @@ public class Graph<T extends Comparable<T>> {
         StringBuilder string = new StringBuilder();
         string.append("Adjacency Lists").append("\n");
         for (int i = 0; i < this.elements.len; i++) {
-            string.append(this.elements.getElement(i)).append(this.elements.getElement(i).getEdges()).append("\n");
+            string.append(this.elements.getElement(i)).append("\n");
         }
         return string.toString();
     }
@@ -117,7 +136,7 @@ public class Graph<T extends Comparable<T>> {
         //used for deletions
         @Override
         public int compareTo(Edge<T> o) {
-            return o.connection.compareTo(o.connection);
+            return this.connection.compareTo(o.connection);
         }
     }
 }
