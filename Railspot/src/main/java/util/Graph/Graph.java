@@ -5,11 +5,9 @@ import util.LinkedList;
 
 public class Graph<T extends Comparable<T>> {
     private final LinkedList<Vertex<T>> elements;
-    private int len;
 
     public Graph() {
         this.elements = new LinkedList<>();
-        this.len = 0;
     }
 
     /**
@@ -19,7 +17,6 @@ public class Graph<T extends Comparable<T>> {
      */
     public void addElement(T data) {
         //verificar que no este repetido
-        this.len++;
         this.elements.add(new Vertex<>(data));
     }
 
@@ -29,7 +26,6 @@ public class Graph<T extends Comparable<T>> {
      * @param element element to be deleted
      */
     public void deleteElement(T element) {
-        this.len--;
         this.elements.delete(new Vertex<>(element));
     }
 
@@ -104,14 +100,12 @@ public class Graph<T extends Comparable<T>> {
         //do while there are nodes unvisited
         // first with the source node, because its the start point for the algorithm.
         DijkstraHelper<Vertex<T>> current = results.getElement(0);
-        boolean flag = true;
         while (current != null) {
             //connections of the current node.
             LinkedList<Edge<T>> currentConnections = current.getNode().getEdges();
             for (int i = 0; i < currentConnections.len; i++) {
                 // find the equivalent and ask
                 Edge<T> connectionsElement = currentConnections.getElement(i);
-                int elementWeight = connectionsElement.getWeight();
                 DijkstraHelper<Vertex<T>> connectionComponent = results.getElement(new DijkstraHelper<>(connectionsElement.getConnection()));
                 //current weight + current connection < dijkstra obj, weight¿?
                 if ((current.weight + connectionsElement.getWeight()) < connectionComponent.weight) {

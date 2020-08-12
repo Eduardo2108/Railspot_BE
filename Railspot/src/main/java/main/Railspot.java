@@ -1,7 +1,8 @@
+package main ;
 import backend.Route;
 import backend.Station;
 import util.Graph.Graph;
-import util.LinkedList;
+
 
 /**
  * Driver class for the server, facade for the management of the router, buys and configurations of the server
@@ -31,8 +32,14 @@ public class Railspot {
         this.map.deleteElement(station);
     }
 
-    public LinkedList<Route> shortestPath(Station a, Station b) {
-        return null;
+    public Route shortestPath(Station a, Station b) {
+        Route route = new Route();
+        route.setPath(this.map.shortestPath(a, b));
+        return route;
 
+    }
+
+    public void setMap(Graph<Station> map) {
+        this.map = map;
     }
 }

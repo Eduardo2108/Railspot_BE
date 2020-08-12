@@ -2,13 +2,13 @@ package util.Graph;
 
 import util.LinkedList;
 
-public class Path<T extends Comparable> {
-    private LinkedList list = new LinkedList();
-            ;
+public class Path<T extends Comparable<T>> {
+    private LinkedList<T> list = new LinkedList<>();
+    ;
     private int weight;
 
     public void addNode(T data) {
-        this.list.add(data);
+        this.list.addFirst(data);
     }
 
     @Override
@@ -17,6 +17,14 @@ public class Path<T extends Comparable> {
                 "list=" + list +
                 ", weight=" + weight +
                 '}';
+    }
+
+    public LinkedList<T> getRoute() {
+        return this.list;
+    }
+
+    public int getWeight() {
+        return this.weight;
     }
 
     public void setWeight(int weight) {
