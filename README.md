@@ -1,2 +1,3 @@
-# Railspot
-3rd project for CE1103, Algorithms and data structures I, ITCR
+# Railspot Backend
+Project III
+Algorithms and data structures I, ITCR
