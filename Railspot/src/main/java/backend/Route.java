@@ -5,7 +5,7 @@ import util.LinkedList;
 
 public class Route implements Comparable<Route> {
     private LinkedList<Station> route;
-    private int price;
+    private int distance;
 
 
     public void addStop(Station newStation) {
@@ -18,7 +18,7 @@ public class Route implements Comparable<Route> {
         for (int i = 0; i < route.len; i++) {
             sb.append("-->").append(route.getElement(i).getName()).append("-->");
         }
-        sb.append(", price=").append(price);
+        sb.append(", price=").append(distance);
         sb.append('}');
         return sb.toString();
     }
@@ -38,6 +38,10 @@ public class Route implements Comparable<Route> {
 
     public void setPath(Path<Station> path) {
         this.route = path.getRoute();
-        this.price = path.getWeight();
+        this.distance = path.getWeight();
+    }
+
+    public int getDistance() {
+        return this.distance;
     }
 }

@@ -1,0 +1,95 @@
+9Elemento: Station{name='Cartago', tickets=null}  Peso: 0
+oElemento: Station{name='turrialba', tickets=null}  Predecesor: Station{name='paraiso', tickets=null}  Peso: 57
+nElemento: Station{name='san_jose', tickets=null}  Predecesor: Station{name='Cartago', tickets=null}  Peso: 22
+mElemento: Station{name='heredia', tickets=null}  Predecesor: Station{name='Cartago', tickets=null}  Peso: 30
+nElemento: Station{name='tilaran', tickets=null}  Predecesor: Station{name='san_jose', tickets=null}  Peso: 37
+nElemento: Station{name='hojancha', tickets=null}  Predecesor: Station{name='heredia', tickets=null}  Peso: 36
+lElemento: Station{name='paraiso', tickets=null}  Predecesor: Station{name='Cartago', tickets=null}  Peso: 7
+;Route{-->Cartago-->-->heredia-->-->hojancha-->, price=36}
+Adjacency Lists
+@Vertex{ 1867177770||data=2, edges=LinkedList{len=0, head=null}}
+wVertex{ 996585715||data=3, edges=LinkedList{len=1, head=Node{next=null, data=Edge{weight=80, connection=1911969958}}}}
+wVertex{ 1911969958||data=4, edges=LinkedList{len=1, head=Node{next=null, data=Edge{weight=80, connection=996585715}}}}
+?Vertex{ 164536380||data=5, edges=LinkedList{len=0, head=null}}
+?Vertex{ 809799072||data=6, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1051415155||data=7, edges=LinkedList{len=0, head=null}}
+
+Adjacency Lists
+@Vertex{ 1867177770||data=2, edges=LinkedList{len=0, head=null}}
+wVertex{ 996585715||data=3, edges=LinkedList{len=1, head=Node{next=null, data=Edge{weight=80, connection=1911969958}}}}
+¯Vertex{ 1911969958||data=4, edges=LinkedList{len=2, head=Node{next=Node{next=null, data=Edge{weight=80, connection=1867177770}}, data=Edge{weight=80, connection=996585715}}}}
+?Vertex{ 164536380||data=5, edges=LinkedList{len=0, head=null}}
+?Vertex{ 809799072||data=6, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1051415155||data=7, edges=LinkedList{len=0, head=null}}
+
+Adjacency Lists
+@Vertex{ 2111512168||data=3, edges=LinkedList{len=0, head=null}}
+>Vertex{ 32018095||data=5, edges=LinkedList{len=0, head=null}}
+?Vertex{ 357903039||data=6, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1904855724||data=7, edges=LinkedList{len=0, head=null}}
+
+Adjacency Lists
+wVertex{ 1417982635||data=3, edges=LinkedList{len=1, head=Node{next=null, data=Edge{weight=80, connection=291296098}}}}
+?Vertex{ 291296098||data=4, edges=LinkedList{len=0, head=null}}
+?Vertex{ 761266980||data=5, edges=LinkedList{len=0, head=null}}
+?Vertex{ 310603918||data=6, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1675856287||data=7, edges=LinkedList{len=0, head=null}}
+
+Adjacency Lists
+­Vertex{ 349405506||data=3, edges=LinkedList{len=2, head=Node{next=Node{next=null, data=Edge{weight=80, connection=965200351}}, data=Edge{weight=80, connection=814340449}}}}
+?Vertex{ 814340449||data=4, edges=LinkedList{len=0, head=null}}
+?Vertex{ 965200351||data=5, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1331237278||data=6, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1200111782||data=7, edges=LinkedList{len=0, head=null}}
+
+Adjacency Lists
+vVertex{ 349405506||data=3, edges=LinkedList{len=1, head=Node{next=null, data=Edge{weight=80, connection=965200351}}}}
+?Vertex{ 814340449||data=4, edges=LinkedList{len=0, head=null}}
+?Vertex{ 965200351||data=5, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1331237278||data=6, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1200111782||data=7, edges=LinkedList{len=0, head=null}}
+
+Adjacency Lists
+¯Vertex{ 1086759097||data=3, edges=LinkedList{len=2, head=Node{next=Node{next=null, data=Edge{weight=80, connection=1048197905}}, data=Edge{weight=80, connection=967317665}}}}
+?Vertex{ 967317665||data=4, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1048197905||data=5, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1017180738||data=6, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1226202631||data=7, edges=LinkedList{len=0, head=null}}
+
+Node not found to delete.
+Adjacency Lists
+¯Vertex{ 1086759097||data=3, edges=LinkedList{len=2, head=Node{next=Node{next=null, data=Edge{weight=80, connection=1048197905}}, data=Edge{weight=80, connection=967317665}}}}
+?Vertex{ 967317665||data=4, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1048197905||data=5, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1017180738||data=6, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1226202631||data=7, edges=LinkedList{len=0, head=null}}
+
+	Adjacency Lists
+	wVertex{ 651904647||data=3, edges=LinkedList{len=1, head=Node{next=null, data=Edge{weight=80, connection=1599029229}}}}
+	@Vertex{ 1599029229||data=4, edges=LinkedList{len=0, head=null}}
+	@Vertex{ 1682371748||data=5, edges=LinkedList{len=0, head=null}}
+	?Vertex{ 526084173||data=6, edges=LinkedList{len=0, head=null}}
+	@Vertex{ 1665727071||data=7, edges=LinkedList{len=0, head=null}}
+	
+	Adjacency Lists
+	?Vertex{ 651904647||data=3, edges=LinkedList{len=0, head=null}}
+	@Vertex{ 1599029229||data=4, edges=LinkedList{len=0, head=null}}
+	@Vertex{ 1682371748||data=5, edges=LinkedList{len=0, head=null}}
+	?Vertex{ 526084173||data=6, edges=LinkedList{len=0, head=null}}
+	@Vertex{ 1665727071||data=7, edges=LinkedList{len=0, head=null}}
+	
+Adjacency Lists
+@Vertex{ 1163788684||data=3, edges=LinkedList{len=0, head=null}}
+?Vertex{ 376323671||data=4, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1387476439||data=5, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1988995036||data=6, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1131055840||data=7, edges=LinkedList{len=0, head=null}}
+
+Node not found to delete.
+Adjacency Lists
+?Vertex{ 605132892||data=3, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1875319940||data=4, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1961879015||data=5, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1673874448||data=6, edges=LinkedList{len=0, head=null}}
+@Vertex{ 1262418764||data=7, edges=LinkedList{len=0, head=null}}
+

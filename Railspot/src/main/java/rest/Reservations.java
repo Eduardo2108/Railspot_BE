@@ -11,8 +11,8 @@ public class Reservations {
 
     @Path("/byPerson")
     @GET
-    @Consumes
     public Response getByPerson() {
+        //todo: return the json with the list of reservations or the number??????????
         return javax.ws.rs.core.Response.
                 status(javax.ws.rs.core.Response.Status.NOT_IMPLEMENTED).
                 entity("Aca va el json con la ruta").
@@ -24,6 +24,7 @@ public class Reservations {
     @GET
     @Consumes
     public Response getByRoute() {
+        //todo: return the json with the list of reservations or the number??????????
         return javax.ws.rs.core.Response.
                 status(javax.ws.rs.core.Response.Status.NOT_IMPLEMENTED).
                 entity("Aca va el json con la ruta").

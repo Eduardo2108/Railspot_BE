@@ -21,3 +21,13 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+glassfish5/glassfish/bin/
+
+glassfish5/glassfish/domains/domain1/config/
+
+glassfish5/glassfish/domains/domain1/osgi-cache/felix/bundle134/version0.0/
+
+glassfish5/glassfish/domains/domain1/osgi-cache/felix/bundle134/
+
+glassfish5/glassfish/domains/domain1/osgi-cache/felix/bundle135/

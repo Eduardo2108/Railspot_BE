@@ -85,6 +85,7 @@ public class Graph<T extends Comparable<T>> {
         //the source node
         Vertex<T> sourceNode = this.elements.getElement(new Vertex<>(source));
         if (sourceNode == null) return null;
+
         //initialize the list for the algorithm
         LinkedList<DijkstraHelper<Vertex<T>>> results = new LinkedList<>();
         DijkstraHelper<Vertex<T>> sourceHelper = new DijkstraHelper<>(sourceNode);
@@ -114,6 +115,7 @@ public class Graph<T extends Comparable<T>> {
                     connectionComponent.setPre(current.getNode());
                 }
             }
+
             //mark the node visited
             current.visited = true;
             current = this.findNext(results);
@@ -132,6 +134,11 @@ public class Graph<T extends Comparable<T>> {
         while (endingPoint.getPre() != null) {
             path.addNode(endingPoint.node.getData());
             endingPoint = result.getElement(new DijkstraHelper<>(endingPoint.getPre()));
+        }
+        if (endingPoint.getNode().getData().compareTo(start) != 0) {
+            System.out.println("The was trouble finding the path, maybe there's no possible path to connect the nodes.");
+            return null;
+
         }
         path.addNode(endingPoint.node.getData());
         return path;

@@ -1,12 +1,12 @@
 package util;
 
-import javax.swing.*;
+import java.io.Serializable;
 
-public class LinkedList<T extends Comparable<T>> {
-
+public class LinkedList<T extends Comparable<T>> implements Serializable {
     public int len = 0;
     private Node<T> head = null;
-    private Node<T> tail = null;
+    private
+    Node<T> tail = null;
 
     //Add an element to the end of the list.
     public void add(T data) {
@@ -21,19 +21,20 @@ public class LinkedList<T extends Comparable<T>> {
             this.len++;
         }
     }
-    public void addFirst(T data){
+
+    public void addFirst(T data) {
         Node<T> newElement = new Node<>(data);
         if (this.head == null) {
             this.head = this.tail = newElement;
             this.len++;
-        }
-        else{
+        } else {
             newElement.setNext(this.head);
             this.head.setPrev(newElement);
             this.head = newElement;
-            this.len ++;
+            this.len++;
         }
     }
+
     @Override
     public String toString() {
         return "LinkedList{" +
@@ -99,7 +100,7 @@ public class LinkedList<T extends Comparable<T>> {
     //delete an node
     public void delete(T data) {
         //only head
-        if(this.len ==1){
+        if (this.len == 1) {
             this.head = this.tail = null;
             this.len = 0;
         }
@@ -108,11 +109,11 @@ public class LinkedList<T extends Comparable<T>> {
             this.head = this.head.next;
             this.head.getPrev().setNext(null);
             this.head.setPrev(null);
-        //delete tail node
+            //delete tail node
         } else if (this.tail.getData().compareTo(data) == 0) {
             this.tail = this.tail.getPrev();
             this.tail.setNext(null);
-        //delete middle
+            //delete middle
         } else {
             Node<T> toDelete = this.getNode(data);
             if (toDelete == null) {
@@ -129,10 +130,14 @@ public class LinkedList<T extends Comparable<T>> {
         this.len--;
     }
 
-    class Node<T extends Comparable<T>> {
+    class Node<T extends Comparable<T>> implements Serializable{
         Node<T> prev = null;
         Node<T> next = null;
         T data = null;
+
+        public Node(T data) {
+            this.data = data;
+        }
 
         @Override
         public String toString() {
@@ -140,10 +145,6 @@ public class LinkedList<T extends Comparable<T>> {
                     "next=" + next +
                     ", data=" + data +
                     '}';
-        }
-
-        public Node(T data) {
-            this.data = data;
         }
 
         public Node<T> getPrev() {
