@@ -5,7 +5,7 @@ package util.Graph;
  *
  * @param <T> type of the object, same as the nodes of the graph
  */
-class DijkstraHelper<T extends Comparable<T>> implements Comparable<DijkstraHelper<T>> {
+public class DijkstraHelper<T extends Comparable<T>> implements Comparable<DijkstraHelper<T>> {
     /**
      * weight, sum of total weights to get here
      */

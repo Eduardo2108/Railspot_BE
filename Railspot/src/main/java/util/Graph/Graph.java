@@ -3,13 +3,9 @@ package util.Graph;
 
 import util.LinkedList;
 
-import java.sql.PreparedStatement;
-import java.util.concurrent.LinkedBlockingDeque;
-
 public class Graph<T extends Comparable<T>> {
-    private int len;
-
     private final LinkedList<Vertex<T>> elements;
+    private int len;
 
     public Graph() {
         this.elements = new LinkedList<>();
@@ -83,10 +79,16 @@ public class Graph<T extends Comparable<T>> {
         return string.toString();
     }
 
-    public LinkedList<DijkstraHelper<Vertex<T>>> shortPath(T source) {
-        //todo: test dijkstra implementation
+    /**
+     * Method for getting the shortest path from a node to all others, using dijkstra algorithm
+     *
+     * @param source content of the node to calculate routes from.
+     * @return list of nodes, with the corresponding predecessors and weights.
+     */
+    public LinkedList<DijkstraHelper<Vertex<T>>> dijkstraAlgorithm(T source) {
         //the source node
         Vertex<T> sourceNode = this.elements.getElement(new Vertex<>(source));
+        if (sourceNode == null) return null;
         //initialize the list for the algorithm
         LinkedList<DijkstraHelper<Vertex<T>>> results = new LinkedList<>();
         DijkstraHelper<Vertex<T>> sourceHelper = new DijkstraHelper<>(sourceNode);
@@ -103,7 +105,7 @@ public class Graph<T extends Comparable<T>> {
         // first with the source node, because its the start point for the algorithm.
         DijkstraHelper<Vertex<T>> current = results.getElement(0);
         boolean flag = true;
-        while (flag) {
+        while (current != null) {
             //connections of the current node.
             LinkedList<Edge<T>> currentConnections = current.getNode().getEdges();
             for (int i = 0; i < currentConnections.len; i++) {
@@ -122,15 +124,26 @@ public class Graph<T extends Comparable<T>> {
             current.visited = true;
             current = this.findNext(results);
             //find the next not visited node and check if there are not visited nodes to finish the algorithm.
-            if (current == null) {
-                break;
-            }
+
         }
         return results;
     }
 
+    public Path<T> shortestPath(T start, T end) {
+        LinkedList<DijkstraHelper<Vertex<T>>> result = this.dijkstraAlgorithm(start);
+        Path<T> path = new Path<>();
+
+        DijkstraHelper<Vertex<T>> endingPoint = result.getElement(new DijkstraHelper<>(new Vertex<>(end)));
+        path.setWeight(endingPoint.getWeight());
+        while (endingPoint.getPre() != null) {
+            path.addNode(endingPoint.node.getData());
+            endingPoint = result.getElement(new DijkstraHelper<>(endingPoint.getPre()));
+        }
+        path.addNode(endingPoint.node.getData());
+        return path;
+    }
+
     private DijkstraHelper<Vertex<T>> findNext(LinkedList<DijkstraHelper<Vertex<T>>> list) {
-        //todo: implement method to find the cheapest possible node to go
         DijkstraHelper<Vertex<T>> result = null;
         for (int i = 0; i < list.len; i++) {
             DijkstraHelper<Vertex<T>> element = list.getElement(i);

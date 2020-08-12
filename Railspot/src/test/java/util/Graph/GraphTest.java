@@ -1,11 +1,7 @@
 package util.Graph;
 
-import com.sun.java.accessibility.util.internal.ListTranslator;
-import jdk.internal.org.jline.terminal.impl.ExecPty;
 import org.junit.jupiter.api.Test;
 import util.LinkedList;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class GraphTest {
 
@@ -47,7 +43,7 @@ class GraphTest {
         map.connect(heredia, tilaran, 11);
 
         //System.out.println(map);
-        LinkedList< DijkstraHelper<Vertex<String>>> list  = map.shortPath(cartago);
+        LinkedList< DijkstraHelper<Vertex<String>>> list  = map.dijkstraAlgorithm(cartago);
         for (int i = 0; i < list.len; i++) {
             System.out.print("Elemento: " + list.getElement(i).getNode().getData());
             try{
@@ -56,5 +52,6 @@ class GraphTest {
             catch (Exception ignored){ }
             System.out.print("  Peso: " + list.getElement(i).weight + "\n");
         }
+        System.out.println(map.shortestPath(cartago, hojancha));
      }
 }
