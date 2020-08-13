@@ -5,6 +5,7 @@ import backend.Route;
 import backend.Station;
 import backend.Ticket;
 import util.Graph.Graph;
+import util.LinkedList;
 /*
 todo: add the json files writing and reading for the tickets
 todo: manage the serialization of json files and de serialization for the http requestsl
@@ -18,6 +19,7 @@ public class Railspot {
      * Field for the singleton
      */
     private static Railspot instance;
+    private LinkedList<Ticket> reservations;
     /**
      * Field for the stations on a directed graph
      */
@@ -110,5 +112,17 @@ public class Railspot {
         }
 
 
+    }
+
+    public void connect(Station start, Station end, int weiight) {
+        try {
+            this.map.connect(start, end, weiight);
+        } catch (Exception ignored) {
+
+        }
+    }
+
+    public LinkedList<Station> getElements() {
+        return this.map.getElements();
     }
 }

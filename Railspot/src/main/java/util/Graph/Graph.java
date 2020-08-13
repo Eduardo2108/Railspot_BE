@@ -158,4 +158,12 @@ public class Graph<T extends Comparable<T>> {
         }
         return result;
     }
+
+    public LinkedList<T> getElements() {
+        LinkedList<T> result = new LinkedList<>();
+        for (int i = 0; i < this.elements.len; i++) {
+            result.add(this.elements.getElement(i).getData());
+        }
+        return result;
+    }
 }
