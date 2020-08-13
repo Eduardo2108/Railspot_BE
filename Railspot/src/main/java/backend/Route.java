@@ -30,7 +30,6 @@ public class Route implements Comparable<Route> {
     public void addTicket(Ticket ticket) {
         for (int i = 0; i < this.route.len; i++) {
             this.route.getElement(i).addTicket(ticket);
-
         }
     }
 

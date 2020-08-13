@@ -49,7 +49,6 @@ public class Travel {
     @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllStations() {
-        //todo: return all stations in the graph
         try {
             String stationsJson = Serializer.stations(Railspot.getInstance().getElements());
             return Response.status(Response.Status.ACCEPTED).
@@ -68,7 +67,7 @@ public class Travel {
      * Method for getting the calculation of a route, from a to b.
      *
      * @param starting Name of the start station.
-     * @param ending Name of the ending station.
+     * @param ending   Name of the ending station.
      * @return the route, with the price and the stations to pass.
      */
     @GET
@@ -85,7 +84,6 @@ public class Travel {
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).
                     entity(e.getMessage()).
-                    type(MediaType.APPLICATION_JSON_TYPE).
                     build();
         }
     }

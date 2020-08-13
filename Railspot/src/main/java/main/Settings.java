@@ -5,6 +5,7 @@ import backend.Route;
 import backend.Station;
 import backend.Ticket;
 import com.google.gson.reflect.TypeToken;
+import util.Graph.Graph;
 import util.LinkedList;
 
 import java.lang.reflect.Type;
@@ -23,15 +24,24 @@ public final class Settings {
         }.getType();
         public static final Type STATION_LIST_TYPE = new TypeToken<LinkedList<Station>>() {
         }.getType();
+        public static final Type GRAPH_TYPE = new TypeToken<Graph<Station>>() {
+        }.getType();
+        public static final Type RESERVATIONS_TYPE = new TypeToken<LinkedList<Ticket>>() {
+        }.getType();
+
     }
 
-    enum Constants {
+    public enum Constants {
         ;
         public static final int PRICE_KM = 25;
+        private static final String DB_PATH = "backend/DB";
+        public static final String GRAPH_PATH = DB_PATH + "/map.json";
+        public static final String RESERVATIONS_PATH = DB_PATH + "/reservations.json";
     }
 
-    enum Loggers {
+    public enum Loggers {
         ;
+        //todo: implement all the loggers on its classes.
         public static final Logger BILL = Logger.getLogger("Bill");
         public static final Logger STATION = Logger.getLogger("Station");
         public static final Logger EDGE = Logger.getLogger("Edge");

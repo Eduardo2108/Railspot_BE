@@ -16,7 +16,7 @@ public class Admin {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response verify(@QueryParam("user") String user,
                            @QueryParam("pass") String password) {
-
+        //todo: test
         //todo: return a boolean verification true if math, false if not allowed.
         return javax.ws.rs.core.Response.status(Response.Status.ACCEPTED).entity(user + "°°" + password).type(MediaType.TEXT_PLAIN_TYPE).build();
     }
@@ -31,6 +31,7 @@ public class Admin {
     @Path("/station")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response addStation(@QueryParam("value") String jsonStation) {
+        //todo: test
         try {
             Station station = Serializer.station(jsonStation);
             Railspot.getInstance().createStation(station);
@@ -51,7 +52,7 @@ public class Admin {
     @Path("/station")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response deleteStation(@QueryParam("value") String name) {
-        //todo: method for changes on the stations, like name or ubication.
+        //todo: test
         try {
             Railspot.getInstance().deleteStation(new Station(name));
             return Response.status(Response.Status.ACCEPTED).build();
@@ -76,6 +77,7 @@ public class Admin {
     public Response connectStations(@QueryParam("start") String starting,
                                     @QueryParam("ending") String ending,
                                     @QueryParam("km") int weight) {
+        //todo: test
         try {
             Station start = Serializer.station(starting);
             Station end = Serializer.station(ending);
@@ -86,5 +88,29 @@ public class Admin {
             return Response.status(Response.Status.NOT_IMPLEMENTED).build();
         }
     }
+
+    /**
+     * Method for deleting the connection between two stations.
+     * @param st1 name of the station the connection starts from
+     * @param st2 name of the station the connection ends in.
+     * @return Response, code 202 if success, 500 internal server error if failure.
+     */
+    @DELETE
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/route")
+    public Response deleteConnection(@QueryParam("st1") String st1, @QueryParam("st2") String st2) {
+        //todo: test
+        try {
+            Station station = Serializer.station(st1);
+            Station station2 = Serializer.station(st2);
+            Railspot.getInstance().disconnect(station, station2);
+            return Response.status(Response.Status.ACCEPTED).build();
+
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+        }
+
+    }
+
 }
 

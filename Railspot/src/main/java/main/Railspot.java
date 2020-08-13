@@ -6,10 +6,7 @@ import backend.Station;
 import backend.Ticket;
 import util.Graph.Graph;
 import util.LinkedList;
-/*
-todo: add the json files writing and reading for the tickets
-todo: manage the serialization of json files and de serialization for the http requestsl
- */
+//todo: login on files reading
 
 /**
  * Driver class for the server, facade for the management of the router, buys and configurations of the server
@@ -49,12 +46,10 @@ public class Railspot {
      */
 
     public void createStation(Station newStation) {
-        //todo: convert the type to string and use gson
         this.map.addElement(newStation);
     }
 
     public void deleteStation(Station station) {
-        //todo: convert the type to string and use gson
         if (station.getTickets().len != 0) {
             return;
         }
@@ -69,21 +64,10 @@ public class Railspot {
      * @return route object with the station list and the price of all trip
      */
     public Route shortestPath(Station a, Station b) {
-        //todo: convert the types to string and use gson
         Route route = new Route();
         route.setPath(this.map.shortestPath(a, b));
         return route;
 
-    }
-
-    /**
-     * Set the map of the instance to a new one .
-     *
-     * @param map
-     */
-    public void setMap(Graph<Station> map) {
-        //todo: use this method for loading the graph from the json files.
-        this.map = map;
     }
 
     /**
@@ -97,13 +81,13 @@ public class Railspot {
      * @return Bill generated with the info of the purchase.
      */
     public Bill purchaseTicket(Route route, int amount, String id, String date) {
-        //amount of discount on %, máx 90% and its 2% for additional ticket
-        int discount = (amount <= 46) ? amount * 2 : 90;
-        double price = (route.getDistance()) * Settings.Constants.PRICE_KM * ((double) discount / 100);
         try {
+            int discount = (amount <= 46) ? amount * 2 : 90;
+            double price = (route.getDistance()) * Settings.Constants.PRICE_KM * ((double) discount / 100);
             Bill bill = new Bill.Builder().price(price).date(date).id(id).build();
             Ticket ticket = new Ticket(price, id, date);
             route.addTicket(ticket);
+            this.reservations.add(ticket);
             System.out.println("ticked bought");
             return bill;
         } catch (Exception e) {
@@ -114,15 +98,60 @@ public class Railspot {
 
     }
 
-    public void connect(Station start, Station end, int weiight) {
+    public void connect(Station start, Station end, int weight) {
         try {
-            this.map.connect(start, end, weiight);
+            this.map.connect(start, end, weight);
         } catch (Exception ignored) {
 
         }
     }
 
     public LinkedList<Station> getElements() {
+
         return this.map.getElements();
     }
+
+    public void disconnect(Station station1, Station station2) {
+        this.map.disconnect(station1, station2);
+    }
+
+    public LinkedList<Ticket> getReservationsByID(String id) {
+        LinkedList<Ticket> results = new LinkedList<>();
+        for (int i = 0; i < this.reservations.len; i++) {
+            if (this.reservations.getElement(i).getOwnerID() == id)
+                results.add(this.reservations.getElement(i));
+        }
+        return results;
+    }
+
+    public LinkedList<Ticket> getReservationsByDate(String date) {
+        LinkedList<Ticket> results = new LinkedList<>();
+        for (int i = 0; i < this.reservations.len; i++) {
+            if (this.reservations.getElement(i).getDate() == date)
+                results.add(this.reservations.getElement(i));
+        }
+        return results;
+    }
+
+    public LinkedList<Ticket> getReservationsByStation(String name) {
+        return this.map.getElements().getElement(new Station(name)).getTickets();
+    }
+
+    public Graph<Station> getMap() {
+        return this.map;
+    }
+
+    /**
+     * Set the map of the instance to a new one .
+     *
+     * @param map
+     */
+    public void setMap(Graph<Station> map) {
+        this.map = map;
+    }
+
+    public LinkedList<Ticket> getReservations() {
+        return this.reservations;
+    }
 }
+
