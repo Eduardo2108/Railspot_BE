@@ -5,34 +5,29 @@ import java.io.Serializable;
 public class LinkedList<T extends Comparable<T>> implements Serializable {
     public int len = 0;
     private Node<T> head = null;
-    private
-    Node<T> tail = null;
+    private Node<T> tail = null;
 
     //Add an element to the end of the list.
     public void add(T data) {
         Node<T> newElement = new Node<>(data);
         if (this.head == null) {
             this.head = this.tail = newElement;
-            this.len++;
         } else {
             this.tail.setNext(newElement);
-            newElement.setPrev(this.tail);
             this.tail = newElement;
-            this.len++;
         }
+        this.len++;
     }
 
     public void addFirst(T data) {
         Node<T> newElement = new Node<>(data);
         if (this.head == null) {
             this.head = this.tail = newElement;
-            this.len++;
         } else {
             newElement.setNext(this.head);
-            this.head.setPrev(newElement);
             this.head = newElement;
-            this.len++;
         }
+        this.len++;
     }
 
     @Override
@@ -105,76 +100,71 @@ public class LinkedList<T extends Comparable<T>> implements Serializable {
             this.len = 0;
         }
         //delete head
+        Node<T> temp = this.head;
         if (this.head.getData().compareTo(data) == 0) {
             this.head = this.head.next;
-            this.head.getPrev().setNext(null);
-            this.head.setPrev(null);
-            //delete tail node
-        } else if (this.tail.getData().compareTo(data) == 0) {
-            this.tail = this.tail.getPrev();
-            this.tail.setNext(null);
-            //delete middle
+            temp.setNext(null);
+            this.len--;
         } else {
-            Node<T> toDelete = this.getNode(data);
-            if (toDelete == null) {
-                System.out.println("Node not found to delete.");
-                return;
+            int counter = 0;
+            while (counter < this.len) {
+                if (temp.getNext().getData().compareTo(data) == 0) {
+                    temp.setNext(temp.getNext().getNext());
+                    this.len--;
+                    break;
+                }
+                temp = temp.getNext();
+                counter++;
             }
-            Node<T> prev = toDelete.getPrev();
-            Node<T> next = toDelete.getNext();
-            prev.setNext(next);
-            next.setPrev(prev);
-            toDelete.delete();
-
-        }
-        this.len--;
-    }
-
-    class Node<T extends Comparable<T>> implements Serializable{
-        Node<T> prev = null;
-        Node<T> next = null;
-        T data = null;
-
-        public Node(T data) {
-            this.data = data;
-        }
-
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "next=" + next +
-                    ", data=" + data +
-                    '}';
-        }
-
-        public Node<T> getPrev() {
-            return prev;
-        }
-
-        public void setPrev(Node<T> prev) {
-            this.prev = prev;
-        }
-
-        public Node<T> getNext() {
-            return next;
-        }
-
-        public void setNext(Node<T> next) {
-            this.next = next;
-        }
-
-        public T getData() {
-            return data;
-        }
-
-        public void setData(T data) {
-            this.data = data;
-        }
-
-        public void delete() {
-            this.next = this.prev = null;
         }
     }
 }
+
+class Node<T extends Comparable<T>> implements Serializable {
+    Node<T> prev = null;
+    Node<T> next = null;
+    T data = null;
+
+    public Node(T data) {
+        this.data = data;
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "next=" + next +
+                ", data=" + data +
+                '}';
+    }
+
+    public Node<T> getPrev() {
+        return prev;
+    }
+
+    public void setPrev(Node<T> prev) {
+        this.prev = prev;
+    }
+
+    public Node<T> getNext() {
+        return next;
+    }
+
+    public void setNext(Node<T> next) {
+        this.next = next;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public void delete() {
+        this.next = this.prev = null;
+    }
+}
+
 
 

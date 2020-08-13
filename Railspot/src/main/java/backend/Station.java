@@ -9,6 +9,7 @@ public class Station implements Comparable<Station> {
 
     public Station(String name) {
         this.name = name;
+        this.tickets = new LinkedList<>();
     }
 
     public String toString() {

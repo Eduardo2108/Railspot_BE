@@ -1,4 +1,6 @@
-util/GraphTest.java
- util.GraphTest
 util/Graph/GraphTest.java
  util.Graph.GraphTest
+util/GraphTest.java
+ util.GraphTest
+util/tools/SerializerTest.java
+ util.tools.SerializerTest

@@ -4,9 +4,13 @@ import util.Graph.Path;
 import util.LinkedList;
 
 public class Route implements Comparable<Route> {
+
     private LinkedList<Station> route;
     private int distance;
 
+    public Route() {
+        this.route = new LinkedList<>();
+    }
 
     public void addStop(Station newStation) {
         this.route.add(newStation);
@@ -43,5 +47,9 @@ public class Route implements Comparable<Route> {
 
     public int getDistance() {
         return this.distance;
+    }
+
+    public LinkedList<Station> getPath() {
+        return this.route;
     }
 }
