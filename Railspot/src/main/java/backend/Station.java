@@ -1,6 +1,5 @@
 package backend;
 
-import jdk.internal.org.jline.terminal.impl.LineDisciplineTerminal;
 import util.LinkedList;
 
 public class Station implements Comparable<Station> {
@@ -13,10 +12,7 @@ public class Station implements Comparable<Station> {
     }
 
     public String toString() {
-        return "Station{" +
-                "name='" + name + '\'' +
-                ", tickets=" + tickets +
-                '}';
+        return this.name;
     }
 
     public void addTicket(Ticket ticket) {

@@ -11,10 +11,7 @@ class Vertex<T extends Comparable<T>> implements Comparable<Vertex<T>> {
 
     @Override
     public String toString() {
-        return "Vertex{ " + this.hashCode() + "||" +
-                "data=" + data +
-                ", edges=" + edges +
-                '}';
+        return this.data.toString();
     }
 
     private T data;
@@ -36,10 +33,14 @@ class Vertex<T extends Comparable<T>> implements Comparable<Vertex<T>> {
     }
 
     public LinkedList<Edge<T>> getEdges() {
+        if(this.edges == null){
+            this.edges = new LinkedList<>();
+
+        }
         return edges;
     }
 
-    private final LinkedList<Edge<T>> edges;
+    private LinkedList<Edge<T>> edges;
 
     @Override
     public int compareTo(Vertex<T> o) {

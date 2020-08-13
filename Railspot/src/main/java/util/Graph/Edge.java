@@ -15,7 +15,7 @@ class Edge<T extends Comparable<T>> implements Comparable<Edge<T>> {
     public String toString() {
         return "Edge{" +
                 "weight=" + weight +
-                ", connection=" + ((connection != null) ? connection.hashCode() : "" +
+                ", connection=" + ((connection != null) ? connection.getData() : "" +
                 "") +
                 '}';
     }

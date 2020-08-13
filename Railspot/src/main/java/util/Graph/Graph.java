@@ -67,12 +67,14 @@ public class Graph<T extends Comparable<T>> {
 
     @Override
     public String toString() {
-        StringBuilder string = new StringBuilder();
-        string.append("Adjacency Lists").append("\n");
+        final StringBuilder sb = new StringBuilder("Lista de adyacencia grafo: {").append("\n");
         for (int i = 0; i < this.elements.len; i++) {
-            string.append(this.elements.getElement(i)).append("\n");
+            sb.append("Node: ").
+                    append(elements.getElement(i).getData()).
+                    append("Connections: ").append(elements.getElement(i).getEdges()).append("\n");
+
         }
-        return string.toString();
+        return sb.toString();
     }
 
     /**

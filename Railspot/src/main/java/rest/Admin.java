@@ -93,7 +93,7 @@ public class Admin {
      * Method for deleting the connection between two stations.
      * @param st1 name of the station the connection starts from
      * @param st2 name of the station the connection ends in.
-     * @return Response, code 202 if success, 500 internal server error if failure.
+     * @return Response, code 202 if success, 500 internal server error if trouble.
      */
     @DELETE
     @Consumes(MediaType.APPLICATION_JSON)

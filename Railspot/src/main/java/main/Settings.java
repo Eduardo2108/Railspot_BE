@@ -34,9 +34,9 @@ public final class Settings {
     public enum Constants {
         ;
         public static final int PRICE_KM = 25;
-        private static final String DB_PATH = "backend/DB";
-        public static final String GRAPH_PATH = DB_PATH + "/map.json";
-        public static final String RESERVATIONS_PATH = DB_PATH + "/reservations.json";
+        private static final String DB_PATH = "C:\\Users\\eduar\\Desktop\\Railspot\\Railspot\\src\\main\\java\\backend\\DB\\";
+        public static final String GRAPH_PATH = DB_PATH + "map.json";
+        public static final String RESERVATIONS_PATH = DB_PATH + "reservations.json";
     }
 
     public enum Loggers {
@@ -51,6 +51,7 @@ public final class Settings {
         public static final Logger JSON_WRITER = Logger.getLogger("Json_writer");
         public static final Logger JSON_LOADER = Logger.getLogger("Json_Loader");
         public static final Logger SERIALIZER = Logger.getLogger("Serializer");
+        public static final Logger LIST = Logger.getLogger("LinkedList") ;
     }
 
 

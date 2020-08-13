@@ -1,6 +1,12 @@
-util/Graph/GraphTest.java
- util.Graph.GraphTest
-util/GraphTest.java
- util.GraphTest
 util/tools/SerializerTest.java
  util.tools.SerializerTest
+util/GraphTest.java
+ util.GraphTest
+util/tools/JsonWriterTest.java
+ util.tools.JsonWriterTest
+util/Graph/GraphTest.java
+ util.Graph.GraphTest
+util/LinkedListTest.java
+ util.LinkedListTest
+util/tools/jsonReaderTest.java
+ util.tools.jsonReaderTest

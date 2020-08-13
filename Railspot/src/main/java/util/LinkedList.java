@@ -1,20 +1,27 @@
 package util;
 
+import com.google.gson.annotations.Expose;
+import main.Settings;
+
 import java.io.Serializable;
+import java.util.logging.Level;
 
 public class LinkedList<T extends Comparable<T>> implements Serializable {
     public int len = 0;
+    @Expose
     private Node<T> head = null;
-    private Node<T> tail = null;
 
     //Add an element to the end of the list.
     public void add(T data) {
         Node<T> newElement = new Node<>(data);
         if (this.head == null) {
-            this.head = this.tail = newElement;
+            this.head = newElement;
         } else {
-            this.tail.setNext(newElement);
-            this.tail = newElement;
+            Node<T> temp = this.head;
+            while (temp.getNext() != null) {
+                temp = temp.next;
+            }
+            temp.setNext(newElement);
         }
         this.len++;
     }
@@ -22,7 +29,7 @@ public class LinkedList<T extends Comparable<T>> implements Serializable {
     public void addFirst(T data) {
         Node<T> newElement = new Node<>(data);
         if (this.head == null) {
-            this.head = this.tail = newElement;
+            this.head = newElement;
         } else {
             newElement.setNext(this.head);
             this.head = newElement;
@@ -32,21 +39,29 @@ public class LinkedList<T extends Comparable<T>> implements Serializable {
 
     @Override
     public String toString() {
-        return "LinkedList{" +
-                "len=" + len +
-                ", head=" + head +
-
-                '}';
+        if (this.head == null) {
+            return "[]";
+        }
+        StringBuilder string = new StringBuilder().append("[");
+        for (int i = 0; i < this.len; i++) {
+            string.append(this.getElement(i)).append(", ");
+        }
+        return string.toString();
     }
 
     //get an element by index
     public T getElement(int i) {
+        if (this.len == 0) {
+            Settings.Loggers.LIST.log(Level.INFO, "The list its empty;");
+            return null;
+        }
+        if (i == 0) {
+            return this.head.getData();
+        }
         if (i > (this.len - 1)) {
             throw new IllegalArgumentException("Index out of range, max: " + (this.len - 1) + "given :" + i);
-
-        } else if (i == (len - 1)) {
-            return this.tail.getData();
         }
+
         Node<T> temp = this.head;
         int counter = 0;
         while (counter < i) {
@@ -96,7 +111,7 @@ public class LinkedList<T extends Comparable<T>> implements Serializable {
     public void delete(T data) {
         //only head
         if (this.len == 1) {
-            this.head = this.tail = null;
+            this.head =  null;
             this.len = 0;
         }
         //delete head
@@ -121,29 +136,21 @@ public class LinkedList<T extends Comparable<T>> implements Serializable {
 }
 
 class Node<T extends Comparable<T>> implements Serializable {
-    Node<T> prev = null;
+
     Node<T> next = null;
     T data = null;
 
     public Node(T data) {
         this.data = data;
+        this.next = null;
     }
 
     @Override
     public String toString() {
-        return "Node{" +
-                "next=" + next +
-                ", data=" + data +
-                '}';
+
+        return data.toString();
     }
 
-    public Node<T> getPrev() {
-        return prev;
-    }
-
-    public void setPrev(Node<T> prev) {
-        this.prev = prev;
-    }
 
     public Node<T> getNext() {
         return next;
@@ -162,7 +169,7 @@ class Node<T extends Comparable<T>> implements Serializable {
     }
 
     public void delete() {
-        this.next = this.prev = null;
+        this.next = null;
     }
 }
 

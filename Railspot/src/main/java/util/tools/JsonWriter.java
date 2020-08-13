@@ -20,11 +20,12 @@ interface JsonWriter {
      */
     static void updateGraph() {
         String jsonGraph = new Gson().toJson(Railspot.getInstance().getMap(), GRAPH_TYPE);
+        Settings.Loggers.JSON_WRITER.log(Level.INFO, jsonGraph);
         try (FileWriter file = new FileWriter(GRAPH_PATH)) {
             file.write(jsonGraph);
             Settings.Loggers.JSON_WRITER.log(Level.INFO, "Graph stored in memory");
         } catch (IOException e) {
-            Settings.Loggers.JSON_WRITER.log(Level.SEVERE, "Error writing the graph in the disk.");
+            Settings.Loggers.JSON_WRITER.log(Level.SEVERE, ()->"Error writing the graph in the disk." + "\n"+ e.getMessage());
         }
     }
 

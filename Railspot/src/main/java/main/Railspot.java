@@ -26,6 +26,7 @@ public class Railspot {
      * Constructor
      */
     private Railspot() {
+        this.reservations = new LinkedList<>();
         this.map = new Graph<>();
     }
 
@@ -34,6 +35,7 @@ public class Railspot {
      */
     public static synchronized Railspot getInstance() {
         if (instance == null) {
+
             instance = new Railspot();
         }
         return instance;
