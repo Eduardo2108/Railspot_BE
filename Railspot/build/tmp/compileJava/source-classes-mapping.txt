@@ -1,5 +1,5 @@
-rest/RestService.java
- rest.RestService
+util/tools/jsonReader.java
+ util.tools.jsonReader
 main/Settings.java
  main.Settings
  main.Settings$Constants
@@ -12,26 +12,6 @@ main/Settings.java
  main.Settings$TypeJson$5
  main.Settings$TypeJson$6
  main.Settings$TypeJson$7
-backend/Bill.java
- backend.Bill
- backend.Bill$1
- backend.Bill$Builder
-rest/Admin.java
- rest.Admin
-rest/Reservations.java
- rest.Reservations
-util/tools/JsonWriter.java
- util.tools.JsonWriter
-util/Graph/DijkstraHelper.java
- util.Graph.DijkstraHelper
-rest/CORSFilter.java
- rest.CORSFilter
-backend/Ticket.java
- backend.Ticket
-util/Graph/Path.java
- util.Graph.Path
-util/tools/jsonReader.java
- util.tools.jsonReader
 backend/Route.java
  backend.Route
 util/LinkedList.java
@@ -39,15 +19,35 @@ util/LinkedList.java
  util.Node
 main/Railspot.java
  main.Railspot
-backend/Station.java
- backend.Station
 util/Graph/Edge.java
  util.Graph.Edge
-util/tools/Serializer.java
- util.tools.Serializer
+util/Graph/DijkstraHelper.java
+ util.Graph.DijkstraHelper
 rest/Travel.java
  rest.Travel
 util/Graph/Graph.java
  util.Graph.Graph
 util/Graph/Vertex.java
  util.Graph.Vertex
+util/Graph/Path.java
+ util.Graph.Path
+rest/Reservations.java
+ rest.Reservations
+rest/RestService.java
+ rest.RestService
+util/tools/JsonWriter.java
+ util.tools.JsonWriter
+backend/Station.java
+ backend.Station
+rest/Admin.java
+ rest.Admin
+rest/CORSFilter.java
+ rest.CORSFilter
+backend/Bill.java
+ backend.Bill
+ backend.Bill$1
+ backend.Bill$Builder
+backend/Ticket.java
+ backend.Ticket
+util/tools/Serializer.java
+ util.tools.Serializer

@@ -21,7 +21,7 @@ class jsonReaderTest {
         Railspot.getInstance().connect(new Station("Estacion A"),D, 50);
 
         JsonWriter.updateGraph();
-        System.out.println(Railspot.getInstance().getMap());
+        System.out.println(Railspot.getInstance().getMap().shortestPath(new Station("Estacion A"), new Station("Estacion B")));
 
     }
 

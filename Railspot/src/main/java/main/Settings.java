@@ -51,7 +51,9 @@ public final class Settings {
         public static final Logger JSON_WRITER = Logger.getLogger("Json_writer");
         public static final Logger JSON_LOADER = Logger.getLogger("Json_Loader");
         public static final Logger SERIALIZER = Logger.getLogger("Serializer");
-        public static final Logger LIST = Logger.getLogger("LinkedList") ;
+        public static final Logger LIST = Logger.getLogger("LinkedList");
+        public static final Logger ADMINISTRATION = Logger.getLogger("Rest_admin");
+        public static final Logger TRAVELS = Logger.getLogger("Rest_travel");
     }
 
 

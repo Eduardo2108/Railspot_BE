@@ -2,11 +2,12 @@ package rest;
 
 import backend.Station;
 import main.Railspot;
-import util.tools.Serializer;
+import main.Settings;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.logging.Level;
 
 @Path("/admin")
 public class Admin {
@@ -15,29 +16,35 @@ public class Admin {
     @Path("/login")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response verify(@QueryParam("user") String user,
-                           @QueryParam("pass") String password) {
-        //todo: test
-        //todo: return a boolean verification true if math, false if not allowed.
-        return javax.ws.rs.core.Response.status(Response.Status.ACCEPTED).entity(user + "°°" + password).type(MediaType.TEXT_PLAIN_TYPE).build();
+                           @QueryParam("password") String password) {
+        if (user.equals("admin") && password.equals("1234")) {
+
+            return javax.ws.rs.core.Response.status(Response.Status.ACCEPTED).build();
+        } else {
+            return javax.ws.rs.core.Response.status(Response.Status.NOT_ACCEPTABLE).build();
+
+        }
     }
 
     /**
      * Method for adding a new station to the server
      *
-     * @param jsonStation json of the new station to be added to the server.
+     * @param jsonStation name of the new station to create;
      * @return 201 created if success, 500 internal Server.
      */
     @PUT
     @Path("/station")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response addStation(@QueryParam("value") String jsonStation) {
-        //todo: test
+
         try {
-            Station station = Serializer.station(jsonStation);
+            Station station = new Station(jsonStation);
             Railspot.getInstance().createStation(station);
-            return Response.status(Response.Status.CREATED).build();
+            Settings.Loggers.ADMINISTRATION.log(Level.INFO, () -> jsonStation + " station created!");
+            return Response.status(Response.Status.CREATED).entity(Railspot.getInstance().getMap().toString()).build();
 
         } catch (Exception e) {
+            Settings.Loggers.ADMINISTRATION.log(Level.SEVERE, e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
     }
@@ -52,12 +59,15 @@ public class Admin {
     @Path("/station")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response deleteStation(@QueryParam("value") String name) {
-        //todo: test
+
         try {
             Railspot.getInstance().deleteStation(new Station(name));
-            return Response.status(Response.Status.ACCEPTED).build();
+            Settings.Loggers.ADMINISTRATION.log(Level.INFO, () -> name + " deleted!");
+
+            return Response.status(Response.Status.ACCEPTED).entity(Railspot.getInstance().getMap().toString()).build();
 
         } catch (Exception e) {
+            Settings.Loggers.ADMINISTRATION.log(Level.SEVERE, e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 
         }
@@ -73,24 +83,26 @@ public class Admin {
      */
     @PUT
     @Path("/route")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.TEXT_PLAIN)
     public Response connectStations(@QueryParam("start") String starting,
-                                    @QueryParam("ending") String ending,
+                                    @QueryParam("end") String ending,
                                     @QueryParam("km") int weight) {
-        //todo: test
         try {
-            Station start = Serializer.station(starting);
-            Station end = Serializer.station(ending);
+            Station start = Railspot.getInstance().getMap().getElements().getElement(new Station(starting));
+            Station end = Railspot.getInstance().getMap().getElements().getElement(new Station(ending));
             Railspot.getInstance().connect(start, end, weight);
-            return Response.status(Response.Status.CREATED).build();
+            Settings.Loggers.ADMINISTRATION.log(Level.INFO, () -> starting + "-->" + ending + " route created!");
+            return Response.status(Response.Status.CREATED).entity(Railspot.getInstance().getMap().toString()).build();
 
         } catch (Exception e) {
-            return Response.status(Response.Status.NOT_IMPLEMENTED).build();
+            Settings.Loggers.ADMINISTRATION.log(Level.SEVERE, e.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
         }
     }
 
     /**
      * Method for deleting the connection between two stations.
+     *
      * @param st1 name of the station the connection starts from
      * @param st2 name of the station the connection ends in.
      * @return Response, code 202 if success, 500 internal server error if trouble.
@@ -98,15 +110,18 @@ public class Admin {
     @DELETE
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/route")
-    public Response deleteConnection(@QueryParam("st1") String st1, @QueryParam("st2") String st2) {
-        //todo: test
+    public Response deleteConnection(@QueryParam("start") String st1, @QueryParam("end") String st2) {
+
         try {
-            Station station = Serializer.station(st1);
-            Station station2 = Serializer.station(st2);
+            Station station = Railspot.getInstance().getMap().getElements().getElement(new Station(st1));
+            Station station2 = Railspot.getInstance().getMap().getElements().getElement(new Station(st2));
             Railspot.getInstance().disconnect(station, station2);
-            return Response.status(Response.Status.ACCEPTED).build();
+            Settings.Loggers.ADMINISTRATION.log(Level.INFO, () -> st1 + "-->" + st2 + " route deleted.");
+
+            return Response.status(Response.Status.ACCEPTED).entity(Railspot.getInstance().getMap().toString()).build();
 
         } catch (Exception e) {
+            Settings.Loggers.ADMINISTRATION.log(Level.SEVERE, e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
 

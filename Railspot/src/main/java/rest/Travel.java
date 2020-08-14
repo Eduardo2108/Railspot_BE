@@ -4,11 +4,13 @@ import backend.Bill;
 import backend.Route;
 import backend.Station;
 import main.Railspot;
+import main.Settings;
 import util.tools.Serializer;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.logging.Level;
 
 @Path("/routes")
 public class Travel {
@@ -34,8 +36,11 @@ public class Travel {
             Route route = Serializer.route(routeJson);
             Bill bill = Railspot.getInstance().purchaseTicket(route, cant, id, date);
             String billJson = Serializer.bills(bill);
+            Settings.Loggers.TRAVELS.log(Level.INFO, ()-> cant + " tickets bought" +
+                    " " + " for " + route + " by " + id);
             return Response.status(Response.Status.ACCEPTED).entity(billJson).type(MediaType.APPLICATION_JSON_TYPE).build();
         } catch (Exception e) {
+            Settings.Loggers.TRAVELS.log(Level.SEVERE, e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).type(MediaType.TEXT_PLAIN).build();
         }
     }
@@ -51,11 +56,13 @@ public class Travel {
     public Response getAllStations() {
         try {
             String stationsJson = Serializer.stations(Railspot.getInstance().getElements());
+            Settings.Loggers.TRAVELS.log(Level.INFO, "stations asked");
             return Response.status(Response.Status.ACCEPTED).
                     entity(stationsJson).
                     type(MediaType.APPLICATION_JSON_TYPE).
                     build();
         } catch (Exception e) {
+            Settings.Loggers.TRAVELS.log(Level.SEVERE, e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).
                     entity(e.getMessage()).
                     type(MediaType.APPLICATION_JSON_TYPE).
@@ -71,17 +78,20 @@ public class Travel {
      * @return the route, with the price and the stations to pass.
      */
     @GET
-    @Consumes(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.TEXT_PLAIN)
     @Path("/calc")
-    public Response calcRoute(@QueryParam("star") String starting,
+    public Response calcRoute(@QueryParam("start") String starting,
                               @QueryParam("end") String ending) {
         try {
             Station startPoint = Railspot.getInstance().getElements().getElement(new Station(starting));
             Station endPoint = Railspot.getInstance().getElements().getElement(new Station(ending));
             Route route = Railspot.getInstance().shortestPath(startPoint, endPoint);
+            System.out.println(route);
             String routeString = Serializer.route(route);
+            Settings.Loggers.TRAVELS.log(Level.INFO, "Route calc: " + routeString);
             return Response.status(Response.Status.ACCEPTED).entity(routeString).type(MediaType.APPLICATION_JSON_TYPE).build();
         } catch (Exception e) {
+            Settings.Loggers.TRAVELS.log(Level.SEVERE, e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).
                     entity(e.getMessage()).
                     build();

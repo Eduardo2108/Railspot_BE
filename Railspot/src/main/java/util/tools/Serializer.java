@@ -3,9 +3,9 @@ package util.tools;
 import backend.Bill;
 import backend.Route;
 import backend.Station;
+import backend.Ticket;
 import com.google.gson.Gson;
 import main.Settings;
-import sun.security.krb5.internal.Ticket;
 import util.LinkedList;
 
 public abstract class Serializer {

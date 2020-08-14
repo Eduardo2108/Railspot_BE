@@ -84,7 +84,8 @@ public class Railspot {
      */
     public Bill purchaseTicket(Route route, int amount, String id, String date) {
         try {
-            int discount = (amount <= 46) ? amount * 2 : 90;
+            //int discount = ((amount <= 46)&&amount>1) ? amount * 2 : 90;
+            int discount = 100;
             double price = (route.getDistance()) * Settings.Constants.PRICE_KM * ((double) discount / 100);
             Bill bill = new Bill.Builder().price(price).date(date).id(id).build();
             Ticket ticket = new Ticket(price, id, date);

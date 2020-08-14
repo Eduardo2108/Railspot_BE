@@ -14,6 +14,7 @@ public class RestService extends Application {
         classes.add(Travel.class);
         classes.add(Admin.class);
         classes.add(Reservations.class);
+        classes.add(CORSFilter.class);
         return classes;
     }
 }

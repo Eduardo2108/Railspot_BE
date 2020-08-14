@@ -1,5 +1,6 @@
 package backend;
 
+import main.Railspot;
 import util.Graph.Path;
 import util.LinkedList;
 
@@ -29,7 +30,7 @@ public class Route implements Comparable<Route> {
 
     public void addTicket(Ticket ticket) {
         for (int i = 0; i < this.route.len; i++) {
-            this.route.getElement(i).addTicket(ticket);
+            Railspot.getInstance().getMap().getElements().getElement(this.route.getElement(i)).addTicket(ticket);
         }
     }
 

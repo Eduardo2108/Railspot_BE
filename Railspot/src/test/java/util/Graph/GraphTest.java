@@ -56,6 +56,6 @@ class GraphTest {
             System.out.print("  Peso: " + list.getElement(i).weight + "\n");
         }
 
-        System.out.println(railspot.shortestPath(cartago, hojancha));
+        System.out.println(railspot.shortestPath(cartago, turrialba));
     }
 }
