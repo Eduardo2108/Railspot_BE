@@ -10,3 +10,5 @@ util/Graph/GraphTest.java
  util.Graph.GraphTest
 util/tools/JsonWriterTest.java
  util.tools.JsonWriterTest
+main/RailspotTest.java
+ main.RailspotTest

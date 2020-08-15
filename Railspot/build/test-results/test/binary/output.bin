@@ -1,8 +1,1 @@
-Elemento: Cartago  Peso: 0
-3Elemento: turrialba  Predecesor: paraiso  Peso: 57
-2Elemento: san_jose  Predecesor: Cartago  Peso: 22
-1Elemento: heredia  Predecesor: Cartago  Peso: 30
-2Elemento: tilaran  Predecesor: san_jose  Peso: 37
-2Elemento: hojancha  Predecesor: heredia  Peso: 36
-0Elemento: paraiso  Predecesor: Cartago  Peso: 7
-<Route{-->Cartago-->-->paraiso-->-->turrialba-->, price=57}
+2400.0

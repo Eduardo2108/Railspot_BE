@@ -131,5 +131,15 @@ public class Admin {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
         }
     }
+
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    @Path("/percentage")
+    public String disc(@QueryParam("num") int amount,
+                       @QueryParam("price") int price) {
+        double priceKm = price * amount;
+        double discount = ((amount <= 46) ? ((amount - 1) * 0.02) : (0.90)) * priceKm;
+        return String.valueOf(discount);
+    }
 }
 
