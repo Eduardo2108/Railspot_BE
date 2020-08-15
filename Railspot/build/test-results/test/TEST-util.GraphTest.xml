@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="util.GraphTest" tests="9" skipped="0" failures="1" errors="0" timestamp="2020-08-15T09:04:27" hostname="DESKTOP-ID9S6S4" time="0.015">
+<testsuite name="util.GraphTest" tests="9" skipped="0" failures="1" errors="0" timestamp="2020-08-15T09:16:08" hostname="DESKTOP-ID9S6S4" time="0.033">
   <properties/>
-  <testcase name="connectExistsCircular()" classname="util.GraphTest" time="0.001"/>
+  <testcase name="connectExistsCircular()" classname="util.GraphTest" time="0.019"/>
   <testcase name="deleteElementExists()" classname="util.GraphTest" time="0.001"/>
   <testcase name="connectExists()" classname="util.GraphTest" time="0.001"/>
   <testcase name="disconnectWhenOthers()" classname="util.GraphTest" time="0.001"/>
-  <testcase name="disconnectNull()" classname="util.GraphTest" time="0.001"/>
-  <testcase name="disconnectOnly()" classname="util.GraphTest" time="0.001"/>
+  <testcase name="disconnectNull()" classname="util.GraphTest" time="0.002"/>
+  <testcase name="disconnectOnly()" classname="util.GraphTest" time="0.002"/>
   <testcase name="addElement()" classname="util.GraphTest" time="0.001"/>
   <testcase name="connectNull()" classname="util.GraphTest" time="0.001"/>
-  <testcase name="deleteNull()" classname="util.GraphTest" time="0.003">
+  <testcase name="deleteNull()" classname="util.GraphTest" time="0.002">
     <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
 	at util.LinkedList.delete(LinkedList.java:126)
 	at util.Graph.Graph.deleteElement(Graph.java:31)

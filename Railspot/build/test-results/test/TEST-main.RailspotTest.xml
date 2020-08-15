@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="main.RailspotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-15T09:04:27" hostname="DESKTOP-ID9S6S4" time="0.013">
+<testsuite name="main.RailspotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-15T09:16:08" hostname="DESKTOP-ID9S6S4" time="0.0">
   <properties/>
-  <testcase name="purchaseTicket()" classname="main.RailspotTest" time="0.013"/>
+  <testcase name="purchaseTicket()" classname="main.RailspotTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

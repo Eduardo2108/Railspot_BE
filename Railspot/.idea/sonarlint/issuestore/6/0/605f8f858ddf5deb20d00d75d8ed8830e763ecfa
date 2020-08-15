@@ -1,15 +1,13 @@
 
-M
-java:S1168["+Return an empty collection instead of null.(‰ÃíÚúÿÿÿÿ8ÌÄéŠ¿.
-[	java:S106"9Replace this use of System.out or System.err by a logger.(¼èæˆùÿÿÿÿ8ÌÄéŠ¿.
-J	java:S108A")Either remove or fill this block of code.(–ŠúÃşÿÿÿÿ8ÌÄéŠ¿.
-
-java:S1319X"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(“ĞÇ88ÌÄéŠ¿.
-d
-java:S1871"MThis branch's code block is the same as the block for the branch on line 156.(Ñá÷á
 ˆ
 java:S1319¦"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(¸şÀí
 J	java:S108.")Either remove or fill this block of code.(–Ø”§ÿÿÿÿÿ8ÌÄéŠ¿.
+[	java:S106"9Replace this use of System.out or System.err by a logger.(¼èæˆùÿÿÿÿ8ÌÄéŠ¿.
+d
+java:S1871"MThis branch's code block is the same as the block for the branch on line 156.(Ñá÷á
+J	java:S108A")Either remove or fill this block of code.(–ŠúÃşÿÿÿÿ8ÌÄéŠ¿.
+
+java:S1319X"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(“ĞÇ88ÌÄéŠ¿.
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(åóÄç8ì’òŠ¿.
-­
-java:S1598"This file "Graph.java" should be located in "util\Graph" directory, not in "C:\Users\eduar\Desktop\Railspot\Railspot\src\main\java\util\graph".(åóÄç8ì’òŠ¿.
+M
+java:S1168["+Return an empty collection instead of null.(‰ÃíÚúÿÿÿÿ8ÌÄéŠ¿.

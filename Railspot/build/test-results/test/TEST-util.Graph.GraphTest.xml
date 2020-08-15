@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="util.Graph.GraphTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-15T09:04:27" hostname="DESKTOP-ID9S6S4" time="0.063">
+<testsuite name="util.Graph.GraphTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-15T09:16:08" hostname="DESKTOP-ID9S6S4" time="0.002">
   <properties/>
-  <testcase name="shortPath()" classname="util.Graph.GraphTest" time="0.063"/>
+  <testcase name="shortPath()" classname="util.Graph.GraphTest" time="0.002"/>
   <system-out><![CDATA[Elemento: Cartago  Peso: 0
 Elemento: turrialba  Predecesor: paraiso  Peso: 57
 Elemento: san_jose  Predecesor: Cartago  Peso: 22
