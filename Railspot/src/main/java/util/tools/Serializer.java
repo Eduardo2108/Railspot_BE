@@ -5,6 +5,7 @@ import backend.Route;
 import backend.Station;
 import backend.Ticket;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import main.Settings;
 import util.LinkedList;
 
@@ -44,6 +45,25 @@ public abstract class Serializer {
     }
 
     public static String stations(LinkedList<Station> list) {
-        return gson.toJson(list);
+        JsonArray array = new JsonArray();
+        for (int i = 0; i < list.len; i++) {
+            array.add(list.getElement(i).getName());
+        }
+        return array.toString();
+    }
+
+    public static String tickets(LinkedList<Ticket> list) {
+        JsonArray array = new JsonArray();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < list.len; i++) {
+            Ticket ticket = list.getElement(i);
+            sb.append("Identificación: ").append(ticket.getOwnerID()).append(" - ").
+                    append("Fecha: ").append(ticket.getDate()).append(" - ").
+                    append("Precio: ").append(ticket.getPrice()).append(".");
+
+            array.add(sb.toString());
+            sb = new StringBuilder();
+        }
+        return array.toString();
     }
 }

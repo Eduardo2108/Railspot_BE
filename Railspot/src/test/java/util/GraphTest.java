@@ -3,6 +3,8 @@ package util;
 import org.junit.jupiter.api.Test;
 import util.Graph.Graph;
 
+import java.io.IOException;
+
 class GraphTest {
 
     @Test
@@ -57,7 +59,7 @@ class GraphTest {
     }
 
     @Test
-    void deleteElementExists() {
+    void deleteElementExists() throws IOException {
         Graph<Integer> graph = new Graph<>();
         graph.addElement(3);
         graph.addElement(4);
@@ -68,7 +70,7 @@ class GraphTest {
         System.out.println(graph);
     }
     @Test
-    void deleteNull(){
+    void deleteNull() throws IOException {
         Graph<Integer> graph = new Graph<>();
         graph.addElement(3);
         graph.addElement(4);

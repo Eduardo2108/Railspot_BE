@@ -46,7 +46,7 @@ public class Admin {
 
         } catch (Exception e) {
             Settings.Loggers.ADMINISTRATION.log(Level.SEVERE, e.getMessage());
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
         }
     }
 
@@ -70,8 +70,7 @@ public class Admin {
 
         } catch (Exception e) {
             Settings.Loggers.ADMINISTRATION.log(Level.SEVERE, e.getMessage());
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
-
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 
@@ -129,7 +128,7 @@ public class Admin {
 
         } catch (Exception e) {
             Settings.Loggers.ADMINISTRATION.log(Level.SEVERE, e.getMessage());
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
         }
     }
 }

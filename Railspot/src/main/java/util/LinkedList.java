@@ -3,6 +3,7 @@ package util;
 import com.google.gson.annotations.Expose;
 import main.Settings;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.logging.Level;
 
@@ -93,7 +94,6 @@ public class LinkedList<T extends Comparable<T>> implements Serializable {
     public T getElement(T data) {
         T result = null;
         if (this.head == null) return result;
-
         Node<T> temp = this.head;
         int counter = 0;
         while (counter < this.len) {
@@ -108,7 +108,7 @@ public class LinkedList<T extends Comparable<T>> implements Serializable {
     }
 
     //delete an node
-    public void delete(T data) {
+    public void delete(T data) throws IOException {
         //only head
         if (this.len == 1) {
             this.head =  null;
@@ -130,6 +130,9 @@ public class LinkedList<T extends Comparable<T>> implements Serializable {
                 }
                 temp = temp.getNext();
                 counter++;
+            }
+            if(counter == len){
+                throw new IOException("The element was not found.");
             }
         }
     }

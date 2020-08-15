@@ -2,6 +2,8 @@ package util.Graph;
 
 import util.LinkedList;
 
+import java.io.IOException;
+
 class Vertex<T extends Comparable<T>> implements Comparable<Vertex<T>> {
 
     private LinkedList<Edge<T>> edges;
@@ -21,7 +23,7 @@ class Vertex<T extends Comparable<T>> implements Comparable<Vertex<T>> {
         this.edges.add(new Edge<>(vertex, weight));
     }
 
-    public void disconnect(Vertex<T> vertex) {
+    public void disconnect(Vertex<T> vertex) throws IOException {
         this.edges.delete(new Edge<>(vertex, 1));
     }
 

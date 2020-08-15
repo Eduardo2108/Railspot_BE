@@ -27,7 +27,7 @@ public class Travel {
      * Internal server error if problems
      */
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.TEXT_PLAIN)
     @Path("/buy")
     public Response buy(@QueryParam("start") String start,
                         @QueryParam("end") String end,
@@ -58,7 +58,7 @@ public class Travel {
     public Response getAllStations() {
         try {
             String stationsJson = Serializer.stations(Railspot.getInstance().getElements());
-            Settings.Loggers.TRAVELS.log(Level.INFO, "stations asked");
+            Settings.Loggers.TRAVELS.log(Level.INFO, ()->"Stations: " + stationsJson);
             return Response.status(Response.Status.ACCEPTED).
                     entity(stationsJson).
                     type(MediaType.APPLICATION_JSON_TYPE).

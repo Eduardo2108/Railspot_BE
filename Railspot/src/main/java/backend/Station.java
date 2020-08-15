@@ -4,7 +4,7 @@ import util.LinkedList;
 
 public class Station implements Comparable<Station> {
     private final String name;
-    private LinkedList<Ticket> tickets;
+    private final LinkedList<Ticket> tickets;
 
     public Station(String name) {
         this.name = name;

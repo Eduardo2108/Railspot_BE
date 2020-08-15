@@ -6,6 +6,10 @@ import backend.Station;
 import backend.Ticket;
 import util.Graph.Graph;
 import util.LinkedList;
+import util.tools.JsonWriter;
+import util.tools.jsonReader;
+
+import java.io.IOException;
 //todo: login on files reading
 
 /**
@@ -26,8 +30,8 @@ public class Railspot {
      * Constructor
      */
     private Railspot() {
-        this.reservations = new LinkedList<>();
-        this.map = new Graph<>();
+        this.reservations = jsonReader.loadReservations();
+        this.map = jsonReader.loadStations();
     }
 
     /**
@@ -35,7 +39,6 @@ public class Railspot {
      */
     public static synchronized Railspot getInstance() {
         if (instance == null) {
-
             instance = new Railspot();
         }
         return instance;
@@ -49,13 +52,16 @@ public class Railspot {
 
     public void createStation(Station newStation) {
         this.map.addElement(newStation);
+        JsonWriter.updateGraph();
     }
 
-    public void deleteStation(Station station) {
+    public void deleteStation(Station station) throws IOException {
         if (this.getMap().getElements().getElement(station).getTickets().len != 0) {
-            return;
+            throw new IllegalArgumentException("La estación tiene tiquetes activos, no se puede eliminar.");
         }
         this.map.deleteElement(station);
+        JsonWriter.updateGraph();
+
     }
 
     /**
@@ -84,14 +90,14 @@ public class Railspot {
      */
     public Bill purchaseTicket(Route route, int amount, String id, String date) {
         try {
-            //int discount = ((amount <= 46)&&amount>1) ? amount * 2 : 90;
-            int discount = 100;
+            int discount = ((amount <= 46)&&amount>1) ? amount * 2 : 90;
             double price = (route.getDistance()) * Settings.Constants.PRICE_KM * ((double) discount / 100);
             Bill bill = new Bill.Builder().price(price).date(date).id(id).build();
             Ticket ticket = new Ticket(price, id, date);
             route.addTicket(ticket);
             this.reservations.add(ticket);
             System.out.println("ticked bought");
+            JsonWriter.updateReservations();
             return bill;
         } catch (Exception e) {
             System.out.println(e.getCause());
@@ -104,6 +110,7 @@ public class Railspot {
     public void connect(Station start, Station end, int weight) {
         try {
             this.map.connect(start, end, weight);
+            JsonWriter.updateGraph();
         } catch (Exception ignored) {
 
         }
@@ -116,6 +123,8 @@ public class Railspot {
 
     public void disconnect(Station station1, Station station2) {
         this.map.disconnect(station1, station2);
+        JsonWriter.updateGraph();
+
     }
 
     public LinkedList<Ticket> getReservationsByID(String id) {

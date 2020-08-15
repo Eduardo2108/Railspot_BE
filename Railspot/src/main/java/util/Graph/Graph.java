@@ -3,6 +3,8 @@ package util.Graph;
 
 import util.LinkedList;
 
+import java.io.IOException;
+
 public class Graph<T extends Comparable<T>> {
     private final LinkedList<Vertex<T>> elements;
 
@@ -25,7 +27,7 @@ public class Graph<T extends Comparable<T>> {
      *
      * @param element element to be deleted
      */
-    public void deleteElement(T element) {
+    public void deleteElement(T element) throws IOException {
         this.elements.delete(new Vertex<>(element));
     }
 
@@ -41,7 +43,7 @@ public class Graph<T extends Comparable<T>> {
             Vertex<T> var2 = this.elements.getElement(new Vertex<>(node2));
             //disconect a node from another
             var1.disconnect(var2);
-        } catch (NullPointerException ignored) {
+        } catch (NullPointerException | IOException ignored) {
         }
     }
 

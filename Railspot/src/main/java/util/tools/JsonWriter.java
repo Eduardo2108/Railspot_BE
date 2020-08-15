@@ -13,7 +13,7 @@ import static main.Settings.Constants.RESERVATIONS_PATH;
 import static main.Settings.TypeJson.GRAPH_TYPE;
 import static main.Settings.TypeJson.RESERVATIONS_TYPE;
 
-interface JsonWriter {
+public interface JsonWriter {
 
     /**
      * Method for saving the information of the graph on the disk, for later use.

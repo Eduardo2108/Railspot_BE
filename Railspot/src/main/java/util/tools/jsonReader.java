@@ -13,7 +13,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 
 
-interface jsonReader {
+public interface jsonReader {
     /**
      * Method for loading the information of the graph from the disk, to load it in memory
      *
