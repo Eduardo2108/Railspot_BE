@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="util.tools.SerializerTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-08-15T09:04:27" hostname="DESKTOP-ID9S6S4" time="0.007">
+  <properties/>
+  <testcase name="station()" classname="util.tools.SerializerTest" time="0.001"/>
+  <testcase name="testBills()" classname="util.tools.SerializerTest" time="0.0"/>
+  <testcase name="testRoute()" classname="util.tools.SerializerTest" time="0.0"/>
+  <testcase name="ticket()" classname="util.tools.SerializerTest" time="0.001"/>
+  <testcase name="bills()" classname="util.tools.SerializerTest" time="0.0"/>
+  <testcase name="route()" classname="util.tools.SerializerTest" time="0.001"/>
+  <testcase name="testTicket()" classname="util.tools.SerializerTest" time="0.0"/>
+  <testcase name="testStation()" classname="util.tools.SerializerTest" time="0.0"/>
+  <system-out><![CDATA[{"name":"Prueba","tickets":{"len":0}}
+{"route":{"len":3,"head":{"next":{"next":{"data":{"name":"Stop 3","tickets":{"len":0}}},"data":{"name":"Stop 2","tickets":{"len":0}}},"data":{"name":"Stop 1","tickets":{"len":0}}}},"distance":0}
+Prueba
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,6 @@
+
+N	java:S106["9Replace this use of System.out or System.err by a logger.(‘Æ›Ó
+R
+java:S2629]"7Use the built-in formatting to construct this argument.(ÛÔïŒûÿÿÿÿ
+f
+java:S3457]"KFormat specifiers or lambda should be used instead of string concatenation.(ÛÔïŒûÿÿÿÿ

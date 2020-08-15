@@ -3,17 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="x-ua-compatible" content="IE=edge"/>
-<title>Test results - RailspotTest</title>
+<title>Test results - GraphTest</title>
 <link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../js/report.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="content">
-<h1>RailspotTest</h1>
+<h1>GraphTest</h1>
 <div class="breadcrumbs">
 <a href="../index.html">all</a> &gt; 
-<a href="../packages/main.html">main</a> &gt; RailspotTest</div>
+<a href="../packages/util.Graph.html">util.Graph</a> &gt; GraphTest</div>
 <div id="summary">
 <table>
 <tr>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.013s</div>
+<div class="counter">0.063s</div>
 <p>duration</p>
 </div>
 </td>
@@ -63,6 +63,9 @@
 <li>
 <a href="#tab0">Tests</a>
 </li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Tests</h2>
@@ -75,11 +78,25 @@
 </tr>
 </thead>
 <tr>
-<td class="success">purchaseTicket()</td>
-<td class="success">0.013s</td>
+<td class="success">shortPath()</td>
+<td class="success">0.063s</td>
 <td class="success">passed</td>
 </tr>
 </table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>Elemento: Cartago  Peso: 0
+Elemento: turrialba  Predecesor: paraiso  Peso: 57
+Elemento: san_jose  Predecesor: Cartago  Peso: 22
+Elemento: heredia  Predecesor: Cartago  Peso: 30
+Elemento: tilaran  Predecesor: san_jose  Peso: 37
+Elemento: hojancha  Predecesor: heredia  Peso: 36
+Elemento: paraiso  Predecesor: Cartago  Peso: 7
+Route{--&gt;Cartago--&gt;--&gt;paraiso--&gt;--&gt;turrialba--&gt;, price=57}
+</pre>
+</span>
 </div>
 </div>
 <div id="footer">

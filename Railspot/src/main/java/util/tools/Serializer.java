@@ -57,7 +57,7 @@ public abstract class Serializer {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < list.len; i++) {
             Ticket ticket = list.getElement(i);
-            sb.append("Identificación: ").append(ticket.getOwnerID()).append(" - ").
+            sb.append("Identificacion: ").append(ticket.getOwnerID()).append(" - ").
                     append("Fecha: ").append(ticket.getDate()).append(" - ").
                     append("Precio: ").append(ticket.getPrice()).append(".");
 

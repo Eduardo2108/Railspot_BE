@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="util.tools.JsonWriterTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-08-15T09:04:27" hostname="DESKTOP-ID9S6S4" time="0.024">
+  <properties/>
+  <testcase name="updateGraph()" classname="util.tools.JsonWriterTest" time="0.024"/>
+  <testcase name="updateReservations()" classname="util.tools.JsonWriterTest" time="0.0"/>
+  <system-out><![CDATA[Lista de adyacencia grafo: {
+Node: puntarenasConnections: [Edge{weight=250, connection=alajuela}, 
+Node: cartagoConnections: []
+Node: alajuelaConnections: [Edge{weight=30, connection=cartago}, 
+Node: Estacion CConnections: []
+Node: Estacion DConnections: []
+Node: Estacion EConnections: []
+Node: Estacion AConnections: [Edge{weight=30, connection=Estacion B}, 
+Node: Estacion BConnections: []
+
+]]></system-out>
+  <system-err><![CDATA[Aug 15, 2020 3:04:27 AM util.tools.JsonWriter updateGraph
+INFO: {"elements":{"len":7,"head":{"next":{"next":{"next":{"next":{"next":{"next":{"data":{"edges":{"len":0},"data":{"name":"Estacion A","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"Estacion E","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"Estacion D","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"Estacion C","tickets":{"len":0}}}},"data":{"edges":{"len":1,"head":{"data":{"weight":30,"connection":{"edges":{"len":0},"data":{"name":"cartago","tickets":{"len":0}}}}}},"data":{"name":"alajuela","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"cartago","tickets":{"len":0}}}},"data":{"edges":{"len":1,"head":{"data":{"weight":250,"connection":{"edges":{"len":1,"head":{"data":{"weight":30,"connection":{"edges":{"len":0},"data":{"name":"cartago","tickets":{"len":0}}}}}},"data":{"name":"alajuela","tickets":{"len":0}}}}}},"data":{"name":"puntarenas","tickets":{"len":0}}}}}}
+Aug 15, 2020 3:04:27 AM util.tools.JsonWriter updateGraph
+INFO: Graph stored in memory
+Aug 15, 2020 3:04:27 AM util.tools.JsonWriter updateGraph
+INFO: {"elements":{"len":8,"head":{"next":{"next":{"next":{"next":{"next":{"next":{"next":{"data":{"edges":{"len":0},"data":{"name":"Estacion B","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"Estacion A","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"Estacion E","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"Estacion D","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"Estacion C","tickets":{"len":0}}}},"data":{"edges":{"len":1,"head":{"data":{"weight":30,"connection":{"edges":{"len":0},"data":{"name":"cartago","tickets":{"len":0}}}}}},"data":{"name":"alajuela","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"cartago","tickets":{"len":0}}}},"data":{"edges":{"len":1,"head":{"data":{"weight":250,"connection":{"edges":{"len":1,"head":{"data":{"weight":30,"connection":{"edges":{"len":0},"data":{"name":"cartago","tickets":{"len":0}}}}}},"data":{"name":"alajuela","tickets":{"len":0}}}}}},"data":{"name":"puntarenas","tickets":{"len":0}}}}}}
+Aug 15, 2020 3:04:27 AM util.tools.JsonWriter updateGraph
+INFO: Graph stored in memory
+Aug 15, 2020 3:04:27 AM util.tools.JsonWriter updateGraph
+INFO: {"elements":{"len":8,"head":{"next":{"next":{"next":{"next":{"next":{"next":{"next":{"data":{"edges":{"len":0},"data":{"name":"Estacion B","tickets":{"len":0}}}},"data":{"edges":{"len":1,"head":{"data":{"weight":30,"connection":{"edges":{"len":0},"data":{"name":"Estacion B","tickets":{"len":0}}}}}},"data":{"name":"Estacion A","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"Estacion E","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"Estacion D","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"Estacion C","tickets":{"len":0}}}},"data":{"edges":{"len":1,"head":{"data":{"weight":30,"connection":{"edges":{"len":0},"data":{"name":"cartago","tickets":{"len":0}}}}}},"data":{"name":"alajuela","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"cartago","tickets":{"len":0}}}},"data":{"edges":{"len":1,"head":{"data":{"weight":250,"connection":{"edges":{"len":1,"head":{"data":{"weight":30,"connection":{"edges":{"len":0},"data":{"name":"cartago","tickets":{"len":0}}}}}},"data":{"name":"alajuela","tickets":{"len":0}}}}}},"data":{"name":"puntarenas","tickets":{"len":0}}}}}}
+Aug 15, 2020 3:04:27 AM util.tools.JsonWriter updateGraph
+INFO: Graph stored in memory
+Aug 15, 2020 3:04:27 AM util.tools.JsonWriter updateGraph
+INFO: {"elements":{"len":8,"head":{"next":{"next":{"next":{"next":{"next":{"next":{"next":{"data":{"edges":{"len":0},"data":{"name":"Estacion B","tickets":{"len":0}}}},"data":{"edges":{"len":1,"head":{"data":{"weight":30,"connection":{"edges":{"len":0},"data":{"name":"Estacion B","tickets":{"len":0}}}}}},"data":{"name":"Estacion A","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"Estacion E","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"Estacion D","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"Estacion C","tickets":{"len":0}}}},"data":{"edges":{"len":1,"head":{"data":{"weight":30,"connection":{"edges":{"len":0},"data":{"name":"cartago","tickets":{"len":0}}}}}},"data":{"name":"alajuela","tickets":{"len":0}}}},"data":{"edges":{"len":0},"data":{"name":"cartago","tickets":{"len":0}}}},"data":{"edges":{"len":1,"head":{"data":{"weight":250,"connection":{"edges":{"len":1,"head":{"data":{"weight":30,"connection":{"edges":{"len":0},"data":{"name":"cartago","tickets":{"len":0}}}}}},"data":{"name":"alajuela","tickets":{"len":0}}}}}},"data":{"name":"puntarenas","tickets":{"len":0}}}}}}
+Aug 15, 2020 3:04:27 AM util.tools.JsonWriter updateGraph
+INFO: Graph stored in memory
+]]></system-err>
+</testsuite>

@@ -1,0 +1,16 @@
+
+S	java:S106c"9Replace this use of System.out or System.err by a logger.(¹õÛ‰ıÿÿÿÿ
+
+java:S1319‚"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(Ù»ãÙıÿÿÿÿ
+
+java:S1319”"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(¸ ¼¯ıÿÿÿÿ
+C	java:S108r")Either remove or fill this block of code.(Æ¸Û‚øÿÿÿÿ
+†
+java:S1319w"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(¡ÿŸ
+T
+java:S1135"2Complete the task associated to this TODO comment.(İìÃÄøÿÿÿÿ8™ÁéŠ¿.
+
+java:S1319‹"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(èÜÉÀùÿÿÿÿ
+N	java:S106g"9Replace this use of System.out or System.err by a logger.(âÍ¼ş
+ˆ
+java:S1319¥"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(àŞÿË
