@@ -40,7 +40,8 @@ public class Admin {
         try {
             Station station = new Station(jsonStation);
             Railspot.getInstance().createStation(station);
-            Settings.Loggers.ADMINISTRATION.log(Level.INFO, () -> jsonStation + " station created!");
+            Settings.Loggers.ADMINISTRATION.log(Level.INFO, () -> jsonStation + " station created!"
+                    + "\n" + Railspot.getInstance().getMap().toString());
             return Response.status(Response.Status.CREATED).entity(Railspot.getInstance().getMap().toString()).build();
 
         } catch (Exception e) {
@@ -62,7 +63,8 @@ public class Admin {
 
         try {
             Railspot.getInstance().deleteStation(new Station(name));
-            Settings.Loggers.ADMINISTRATION.log(Level.INFO, () -> name + " deleted!");
+            Settings.Loggers.ADMINISTRATION.log(Level.INFO, () -> name + " deleted!"
+                    + "\n" + Railspot.getInstance().getMap().toString());
 
             return Response.status(Response.Status.ACCEPTED).entity(Railspot.getInstance().getMap().toString()).build();
 
@@ -87,11 +89,15 @@ public class Admin {
     public Response connectStations(@QueryParam("start") String starting,
                                     @QueryParam("end") String ending,
                                     @QueryParam("km") int weight) {
+        if (starting.equals(ending)) {
+            return Response.status(Response.Status.CONFLICT).build();
+        }
         try {
             Station start = Railspot.getInstance().getMap().getElements().getElement(new Station(starting));
             Station end = Railspot.getInstance().getMap().getElements().getElement(new Station(ending));
             Railspot.getInstance().connect(start, end, weight);
-            Settings.Loggers.ADMINISTRATION.log(Level.INFO, () -> starting + "-->" + ending + " route created!");
+            Settings.Loggers.ADMINISTRATION.log(Level.INFO, () -> starting + "-->" + ending + " route created!"
+                    + "\n" + Railspot.getInstance().getMap().toString());
             return Response.status(Response.Status.CREATED).entity(Railspot.getInstance().getMap().toString()).build();
 
         } catch (Exception e) {
@@ -116,7 +122,8 @@ public class Admin {
             Station station = Railspot.getInstance().getMap().getElements().getElement(new Station(st1));
             Station station2 = Railspot.getInstance().getMap().getElements().getElement(new Station(st2));
             Railspot.getInstance().disconnect(station, station2);
-            Settings.Loggers.ADMINISTRATION.log(Level.INFO, () -> st1 + "-->" + st2 + " route deleted.");
+            Settings.Loggers.ADMINISTRATION.log(Level.INFO, () -> st1 + "-->" + st2 + " route deleted."
+                    + "\n" + Railspot.getInstance().getMap().toString());
 
             return Response.status(Response.Status.ACCEPTED).entity(Railspot.getInstance().getMap().toString()).build();
 
@@ -124,8 +131,6 @@ public class Admin {
             Settings.Loggers.ADMINISTRATION.log(Level.SEVERE, e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-
     }
-
 }
 

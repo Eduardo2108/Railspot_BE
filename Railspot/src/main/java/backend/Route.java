@@ -1,6 +1,7 @@
 package backend;
 
 import main.Railspot;
+import main.Settings;
 import util.Graph.Path;
 import util.LinkedList;
 
@@ -40,16 +41,20 @@ public class Route implements Comparable<Route> {
         return 0;
     }
 
-    public void setPath(Path<Station> path) {
-        this.route = path.getRoute();
-        this.distance = path.getWeight();
-    }
-
     public int getDistance() {
         return this.distance;
     }
 
     public LinkedList<Station> getPath() {
         return this.route;
+    }
+
+    public void setPath(Path<Station> path) {
+        this.route = path.getRoute();
+        this.distance = path.getWeight();
+    }
+
+    public int getPrice() {
+        return this.distance * Settings.Constants.PRICE_KM;
     }
 }

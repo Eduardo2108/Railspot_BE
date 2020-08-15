@@ -46,7 +46,7 @@ class GraphTest {
         map.connect(heredia, tilaran, 11);
         railspot.setMap(map);
         //System.out.println(map);
-        LinkedList<DijkstraHelper<Vertex<Station>>> list = map.dijkstraAlgorithm(cartago);
+        LinkedList<VertexHelper<Vertex<Station>>> list = map.dijkstraAlgorithm(cartago);
         for (int i = 0; i < list.len; i++) {
             System.out.print("Elemento: " + list.getElement(i).getNode().getData());
             try {

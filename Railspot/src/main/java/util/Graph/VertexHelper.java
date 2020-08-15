@@ -5,7 +5,7 @@ package util.Graph;
  *
  * @param <T> type of the object, same as the nodes of the graph
  */
-public class DijkstraHelper<T extends Comparable<T>> implements Comparable<DijkstraHelper<T>> {
+public class VertexHelper<T extends Comparable<T>> implements Comparable<VertexHelper<T>> {
     /**
      * weight, sum of total weights to get here
      */
@@ -25,7 +25,7 @@ public class DijkstraHelper<T extends Comparable<T>> implements Comparable<Dijks
 
     @Override
     public String toString() {
-        return "DijkstraHelper{" +
+        return "VertexHelper{" +
                 "weight=" + weight +
                 ", pre=" + pre +
                 ", node=" + node +
@@ -33,7 +33,7 @@ public class DijkstraHelper<T extends Comparable<T>> implements Comparable<Dijks
                 '}';
     }
 
-    public DijkstraHelper(T node) {
+    public VertexHelper(T node) {
         this.node = node;
         this.pre = null;
         this.weight = Integer.MAX_VALUE;
@@ -64,7 +64,7 @@ public class DijkstraHelper<T extends Comparable<T>> implements Comparable<Dijks
     }
 
     @Override
-    public int compareTo(DijkstraHelper<T> o) {
+    public int compareTo(VertexHelper<T> o) {
         //will be the same if has the same node on content
         return this.node.compareTo(o.getNode());
     }

@@ -83,33 +83,33 @@ public class Graph<T extends Comparable<T>> {
      * @param source content of the node to calculate routes from.
      * @return list of nodes, with the corresponding predecessors and weights.
      */
-    public LinkedList<DijkstraHelper<Vertex<T>>> dijkstraAlgorithm(T source) {
+    public LinkedList<VertexHelper<Vertex<T>>> dijkstraAlgorithm(T source) {
         //the source node
         Vertex<T> sourceNode = this.elements.getElement(new Vertex<>(source));
         if (sourceNode == null) return null;
 
         //initialize the list for the algorithm
-        LinkedList<DijkstraHelper<Vertex<T>>> results = new LinkedList<>();
-        DijkstraHelper<Vertex<T>> sourceHelper = new DijkstraHelper<>(sourceNode);
+        LinkedList<VertexHelper<Vertex<T>>> results = new LinkedList<>();
+        VertexHelper<Vertex<T>> sourceHelper = new VertexHelper<>(sourceNode);
         sourceHelper.setWeight(0);
         results.addFirst(sourceHelper);
         for (int i = 0; i < this.elements.len; i++) {
             if (elements.getElement(i).compareTo(sourceNode) != 0) {
                 //create a new instance with the content of the node, for each node on the list of elements in the graph
-                results.add(new DijkstraHelper<>(this.elements.getElement(i)));
+                results.add(new VertexHelper<>(this.elements.getElement(i)));
             }
         }
 
         //do while there are nodes unvisited
         // first with the source node, because its the start point for the algorithm.
-        DijkstraHelper<Vertex<T>> current = results.getElement(0);
+        VertexHelper<Vertex<T>> current = results.getElement(0);
         while (current != null) {
             //connections of the current node.
             LinkedList<Edge<T>> currentConnections = current.getNode().getEdges();
             for (int i = 0; i < currentConnections.len; i++) {
                 // find the equivalent and ask
                 Edge<T> connectionsElement = currentConnections.getElement(i);
-                DijkstraHelper<Vertex<T>> connectionComponent = results.getElement(new DijkstraHelper<>(connectionsElement.getConnection()));
+                VertexHelper<Vertex<T>> connectionComponent = results.getElement(new VertexHelper<>(connectionsElement.getConnection()));
                 //current weight + current connection < dijkstra obj, weight¿?
                 if ((current.weight + connectionsElement.getWeight()) < connectionComponent.weight) {
                     //yes? -> change the predecessor and weight
@@ -128,14 +128,14 @@ public class Graph<T extends Comparable<T>> {
     }
 
     public Path<T> shortestPath(T start, T end) {
-        LinkedList<DijkstraHelper<Vertex<T>>> result = this.dijkstraAlgorithm(start);
+        LinkedList<VertexHelper<Vertex<T>>> result = this.dijkstraAlgorithm(start);
         Path<T> path = new Path<>();
 
-        DijkstraHelper<Vertex<T>> endingPoint = result.getElement(new DijkstraHelper<>(new Vertex<>(end)));
+        VertexHelper<Vertex<T>> endingPoint = result.getElement(new VertexHelper<>(new Vertex<>(end)));
         path.setWeight(endingPoint.getWeight());
         while (endingPoint.getPre() != null) {
             path.addNode(endingPoint.node.getData());
-            endingPoint = result.getElement(new DijkstraHelper<>(endingPoint.getPre()));
+            endingPoint = result.getElement(new VertexHelper<>(endingPoint.getPre()));
         }
         if (endingPoint.getNode().getData().compareTo(start) != 0) {
             System.out.println("The was trouble finding the path, maybe there's no possible path to connect the nodes.");
@@ -146,10 +146,10 @@ public class Graph<T extends Comparable<T>> {
         return path;
     }
 
-    private DijkstraHelper<Vertex<T>> findNext(LinkedList<DijkstraHelper<Vertex<T>>> list) {
-        DijkstraHelper<Vertex<T>> result = null;
+    private VertexHelper<Vertex<T>> findNext(LinkedList<VertexHelper<Vertex<T>>> list) {
+        VertexHelper<Vertex<T>> result = null;
         for (int i = 0; i < list.len; i++) {
-            DijkstraHelper<Vertex<T>> element = list.getElement(i);
+            VertexHelper<Vertex<T>> element = list.getElement(i);
             if (!element.visited) {
                 if (result == null) {
                     result = element;

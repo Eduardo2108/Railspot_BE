@@ -43,5 +43,7 @@ public abstract class Serializer {
         return gson.fromJson(ticket, Settings.TypeJson.TICKET_TYPE);
     }
 
-    public static String stations(LinkedList<Station> list) { return gson.toJson(list); }
+    public static String stations(LinkedList<Station> list) {
+        return gson.toJson(list);
+    }
 }

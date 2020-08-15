@@ -52,7 +52,7 @@ public class Railspot {
     }
 
     public void deleteStation(Station station) {
-        if (station.getTickets().len != 0) {
+        if (this.getMap().getElements().getElement(station).getTickets().len != 0) {
             return;
         }
         this.map.deleteElement(station);
@@ -121,7 +121,7 @@ public class Railspot {
     public LinkedList<Ticket> getReservationsByID(String id) {
         LinkedList<Ticket> results = new LinkedList<>();
         for (int i = 0; i < this.reservations.len; i++) {
-            if (this.reservations.getElement(i).getOwnerID() == id)
+            if (this.reservations.getElement(i).getOwnerID().equals(id))
                 results.add(this.reservations.getElement(i));
         }
         return results;
@@ -130,7 +130,7 @@ public class Railspot {
     public LinkedList<Ticket> getReservationsByDate(String date) {
         LinkedList<Ticket> results = new LinkedList<>();
         for (int i = 0; i < this.reservations.len; i++) {
-            if (this.reservations.getElement(i).getDate() == date)
+            if (this.reservations.getElement(i).getDate().equals(date))
                 results.add(this.reservations.getElement(i));
         }
         return results;

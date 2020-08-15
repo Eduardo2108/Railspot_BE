@@ -4,6 +4,9 @@ import util.LinkedList;
 
 class Vertex<T extends Comparable<T>> implements Comparable<Vertex<T>> {
 
+    private LinkedList<Edge<T>> edges;
+    private T data;
+
     public Vertex(T data) {
         this.data = data;
         this.edges = new LinkedList<>();
@@ -13,8 +16,6 @@ class Vertex<T extends Comparable<T>> implements Comparable<Vertex<T>> {
     public String toString() {
         return this.data.toString();
     }
-
-    private T data;
 
     public void connect(Vertex<T> vertex, int weight) {
         this.edges.add(new Edge<>(vertex, weight));
@@ -33,14 +34,13 @@ class Vertex<T extends Comparable<T>> implements Comparable<Vertex<T>> {
     }
 
     public LinkedList<Edge<T>> getEdges() {
-        if(this.edges == null){
+        if (this.edges == null) {
             this.edges = new LinkedList<>();
 
         }
         return edges;
     }
 
-    private LinkedList<Edge<T>> edges;
 
     @Override
     public int compareTo(Vertex<T> o) {

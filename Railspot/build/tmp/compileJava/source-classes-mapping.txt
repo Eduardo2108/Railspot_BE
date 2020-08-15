@@ -1,3 +1,5 @@
+util/Graph/VertexHelper.java
+ util.Graph.VertexHelper
 util/tools/jsonReader.java
  util.tools.jsonReader
 main/Settings.java
@@ -21,8 +23,6 @@ main/Railspot.java
  main.Railspot
 util/Graph/Edge.java
  util.Graph.Edge
-util/Graph/DijkstraHelper.java
- util.Graph.DijkstraHelper
 rest/Travel.java
  rest.Travel
 util/Graph/Graph.java

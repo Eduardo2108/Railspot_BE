@@ -18,25 +18,27 @@ public class Travel {
      * Method for buying a ticket, and adding it to the stations
      * The route was previous calculated by server and this method is just for confirmation of the purchase.
      *
-     * @param routeJson route in json format
-     * @param cant      amount of tickets to buy
-     * @param date      String format of the date of the purchase
-     * @param id        id of the customer
+     * @param start start station
+     * @param end   ending route.
+     * @param cant  amount of tickets to buy
+     * @param date  String format of the date of the purchase
+     * @param id    id of the customer
      * @return Accepted code and the json format of the corresponding bill
      * Internal server error if problems
      */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/buy")
-    public Response buy(@QueryParam("route") String routeJson,
+    public Response buy(@QueryParam("start") String start,
+                        @QueryParam("end") String end,
                         @QueryParam("cant") int cant,
                         @QueryParam("date") String date,
                         @QueryParam("id") String id) {
         try {
-            Route route = Serializer.route(routeJson);
+            Route route = Railspot.getInstance().shortestPath(new Station(start), new Station(end));
             Bill bill = Railspot.getInstance().purchaseTicket(route, cant, id, date);
             String billJson = Serializer.bills(bill);
-            Settings.Loggers.TRAVELS.log(Level.INFO, ()-> cant + " tickets bought" +
+            Settings.Loggers.TRAVELS.log(Level.INFO, () -> cant + " tickets bought" +
                     " " + " for " + route + " by " + id);
             return Response.status(Response.Status.ACCEPTED).entity(billJson).type(MediaType.APPLICATION_JSON_TYPE).build();
         } catch (Exception e) {
@@ -89,7 +91,7 @@ public class Travel {
             System.out.println(route);
             String routeString = Serializer.route(route);
             Settings.Loggers.TRAVELS.log(Level.INFO, "Route calc: " + routeString);
-            return Response.status(Response.Status.ACCEPTED).entity(routeString).type(MediaType.APPLICATION_JSON_TYPE).build();
+            return Response.status(Response.Status.ACCEPTED).entity(route.getPrice()).type(MediaType.APPLICATION_JSON_TYPE).build();
         } catch (Exception e) {
             Settings.Loggers.TRAVELS.log(Level.SEVERE, e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).
