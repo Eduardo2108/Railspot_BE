@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -142,35 +142,42 @@ extends java.lang.Object</pre>
 <tbody>
 <tr class="altColor" id="i0">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addStation()">addStation</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addStation(java.lang.String)">addStation</a></span>&#8203;(java.lang.String&nbsp;jsonStation)</code></th>
+<td class="colLast">
+<div class="block">Method for adding a new station to the server</div>
+</td>
 </tr>
 <tr class="rowColor" id="i1">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#connectStations()">connectStations</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#connectStations(java.lang.String,java.lang.String,int)">connectStations</a></span>&#8203;(java.lang.String&nbsp;starting,
+java.lang.String&nbsp;ending,
+int&nbsp;weight)</code></th>
+<td class="colLast">
+<div class="block">Method for connecting two stations</div>
+</td>
 </tr>
 <tr class="altColor" id="i2">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deleteConnection()">deleteConnection</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deleteConnection(java.lang.String,java.lang.String)">deleteConnection</a></span>&#8203;(java.lang.String&nbsp;st1,
+java.lang.String&nbsp;st2)</code></th>
+<td class="colLast">
+<div class="block">Method for deleting the connection between two stations.</div>
+</td>
 </tr>
 <tr class="rowColor" id="i3">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deleteStation()">deleteStation</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deleteStation(java.lang.String)">deleteStation</a></span>&#8203;(java.lang.String&nbsp;name)</code></th>
+<td class="colLast">
+<div class="block">Method for deleting an station.</div>
+</td>
 </tr>
 <tr class="altColor" id="i4">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#modifyRoute()">modifyRoute</a></span>()</code></th>
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#disc(int,int)">disc</a></span>&#8203;(int&nbsp;amount,
+int&nbsp;price)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i5">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#modifyStation()">modifyStation</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor" id="i6">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verify(java.lang.String,java.lang.String)">verify</a></span>&#8203;(java.lang.String&nbsp;user,
 java.lang.String&nbsp;password)</code></th>
@@ -222,62 +229,97 @@ java.lang.String&nbsp;password)</code></th>
 @Consumes("application/json")
 </span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">verify</span>&#8203;(<span class="arguments">@QueryParam("user")
 java.lang.String&nbsp;user,
-@QueryParam("pass")
+@QueryParam("password")
 java.lang.String&nbsp;password)</span></div>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="addStation()">addStation</a></h3>
+<h3><a id="addStation(java.lang.String)">addStation</a></h3>
 <div class="memberSignature"><span class="annotations">@PUT
 @Path("/station")
 @Consumes("application/json")
-</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">addStation</span>()</div>
+</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">addStation</span>&#8203;(<span class="arguments">@QueryParam("value")
+java.lang.String&nbsp;jsonStation)</span></div>
+<div class="block">Method for adding a new station to the server</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>jsonStation</code> - name of the new station to create;</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>201 created if success, 500 internal Server.</dd>
+</dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="modifyStation()">modifyStation</a></h3>
-<div class="memberSignature"><span class="annotations">@POST
-@Path("/station")
-@Consumes("application/json")
-</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">modifyStation</span>()</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="deleteStation()">deleteStation</a></h3>
+<h3><a id="deleteStation(java.lang.String)">deleteStation</a></h3>
 <div class="memberSignature"><span class="annotations">@DELETE
 @Path("/station")
 @Consumes("application/json")
-</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">deleteStation</span>()</div>
+</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">deleteStation</span>&#8203;(<span class="arguments">@QueryParam("value")
+java.lang.String&nbsp;name)</span></div>
+<div class="block">Method for deleting an station.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - name of the station to be deleted.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>202 accepted or 500 internal server error.</dd>
+</dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="modifyRoute()">modifyRoute</a></h3>
-<div class="memberSignature"><span class="annotations">@POST
-@Path("/route")
-@Consumes("application/json")
-</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">modifyRoute</span>()</div>
-</section>
-</li>
-<li class="blockList">
-<section class="detail">
-<h3><a id="connectStations()">connectStations</a></h3>
+<h3><a id="connectStations(java.lang.String,java.lang.String,int)">connectStations</a></h3>
 <div class="memberSignature"><span class="annotations">@PUT
 @Path("/route")
-@Consumes("application/json")
-</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">connectStations</span>()</div>
+@Consumes("text/plain")
+</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">connectStations</span>&#8203;(<span class="arguments">@QueryParam("start")
+java.lang.String&nbsp;starting,
+@QueryParam("end")
+java.lang.String&nbsp;ending,
+@QueryParam("km")
+int&nbsp;weight)</span></div>
+<div class="block">Method for connecting two stations</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>starting</code> - name of the starting point</dd>
+<dd><code>ending</code> - name of the ending point</dd>
+<dd><code>weight</code> - distance fo the two stations</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Created if success, internal server code if error.</dd>
+</dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="deleteConnection()">deleteConnection</a></h3>
+<h3><a id="deleteConnection(java.lang.String,java.lang.String)">deleteConnection</a></h3>
 <div class="memberSignature"><span class="annotations">@DELETE
 @Consumes("application/json")
 @Path("/route")
-</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">deleteConnection</span>()</div>
+</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">deleteConnection</span>&#8203;(<span class="arguments">@QueryParam("start")
+java.lang.String&nbsp;st1,
+@QueryParam("end")
+java.lang.String&nbsp;st2)</span></div>
+<div class="block">Method for deleting the connection between two stations.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>st1</code> - name of the station the connection starts from</dd>
+<dd><code>st2</code> - name of the station the connection ends in.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Response, code 202 if success, 500 internal server error if trouble.</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="disc(int,int)">disc</a></h3>
+<div class="memberSignature"><span class="annotations">@GET
+@Produces("text/plain")
+@Path("/percentage")
+</span><span class="modifiers">public</span>&nbsp;<span class="returnType">java.lang.String</span>&nbsp;<span class="memberName">disc</span>&#8203;(<span class="arguments">@QueryParam("num")
+int&nbsp;amount,
+@QueryParam("price")
+int&nbsp;price)</span></div>
 </section>
 </li>
 </ul>

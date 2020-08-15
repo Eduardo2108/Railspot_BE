@@ -1,0 +1,7 @@
+organization=eduardo2108
+projectKey=railspot
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.10837
+dashboardUrl=https://sonarcloud.io/dashboard?id=railspot
+ceTaskId=AXPzjOm9KpL5wVXoil9g
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXPzjOm9KpL5wVXoil9g

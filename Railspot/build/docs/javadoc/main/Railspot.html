@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../script-dir/jquery-ui.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":9,"i3":10,"i4":10,"i5":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -117,37 +117,78 @@ extends java.lang.Object</pre>
 <tbody>
 <tr class="altColor" id="i0">
 <td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#connect(backend.Station,backend.Station,int)">connect</a></span>&#8203;(<a href="../backend/Station.html" title="class in backend">Station</a>&nbsp;start,
+<a href="../backend/Station.html" title="class in backend">Station</a>&nbsp;end,
+int&nbsp;weight)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i1">
+<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createStation(backend.Station)">createStation</a></span>&#8203;(<a href="../backend/Station.html" title="class in backend">Station</a>&nbsp;newStation)</code></th>
 <td class="colLast">
 <div class="block">Create stations</div>
 </td>
 </tr>
-<tr class="rowColor" id="i1">
+<tr class="altColor" id="i2">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deleteStation(backend.Station)">deleteStation</a></span>&#8203;(<a href="../backend/Station.html" title="class in backend">Station</a>&nbsp;station)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor" id="i2">
-<td class="colFirst"><code>static <a href="Railspot.html" title="class in main">Railspot</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getInstance()">getInstance</a></span>()</code></th>
-<td class="colLast">
-<div class="block">singleton</div>
-</td>
-</tr>
 <tr class="rowColor" id="i3">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#purchaseTicket(backend.Route,int)">purchaseTicket</a></span>&#8203;(<a href="../backend/Route.html" title="class in backend">Route</a>&nbsp;route,
-int&nbsp;amount)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#disconnect(backend.Station,backend.Station)">disconnect</a></span>&#8203;(<a href="../backend/Station.html" title="class in backend">Station</a>&nbsp;station1,
+<a href="../backend/Station.html" title="class in backend">Station</a>&nbsp;station2)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor" id="i4">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMap(util.Graph.Graph)">setMap</a></span>&#8203;(<a href="../util/Graph/Graph.html" title="class in util.Graph">Graph</a>&lt;<a href="../backend/Station.html" title="class in backend">Station</a>&gt;&nbsp;map)</code></th>
-<td class="colLast">
-<div class="block">Set the map of the instance to a new one .</div>
-</td>
+<td class="colFirst"><code><a href="../util/LinkedList.html" title="class in util">LinkedList</a>&lt;<a href="../backend/Station.html" title="class in backend">Station</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getElements()">getElements</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor" id="i5">
+<td class="colFirst"><code>static <a href="Railspot.html" title="class in main">Railspot</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getInstance()">getInstance</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Method for the singleton pattern</div>
+</td>
+</tr>
+<tr class="altColor" id="i6">
+<td class="colFirst"><code><a href="../util/graph/Graph.html" title="class in util.graph">Graph</a>&lt;<a href="../backend/Station.html" title="class in backend">Station</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMap()">getMap</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i7">
+<td class="colFirst"><code><a href="../util/LinkedList.html" title="class in util">LinkedList</a>&lt;<a href="../backend/Ticket.html" title="class in backend">Ticket</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReservations()">getReservations</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i8">
+<td class="colFirst"><code><a href="../util/LinkedList.html" title="class in util">LinkedList</a>&lt;<a href="../backend/Ticket.html" title="class in backend">Ticket</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReservationsByDate(java.lang.String)">getReservationsByDate</a></span>&#8203;(java.lang.String&nbsp;date)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i9">
+<td class="colFirst"><code><a href="../util/LinkedList.html" title="class in util">LinkedList</a>&lt;<a href="../backend/Ticket.html" title="class in backend">Ticket</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReservationsByID(java.lang.String)">getReservationsByID</a></span>&#8203;(java.lang.String&nbsp;id)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor" id="i10">
+<td class="colFirst"><code><a href="../util/LinkedList.html" title="class in util">LinkedList</a>&lt;<a href="../backend/Ticket.html" title="class in backend">Ticket</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReservationsByStation(java.lang.String)">getReservationsByStation</a></span>&#8203;(java.lang.String&nbsp;name)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor" id="i11">
+<td class="colFirst"><code><a href="../backend/Bill.html" title="class in backend">Bill</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#purchaseTicket(backend.Route,int,java.lang.String,java.lang.String)">purchaseTicket</a></span>&#8203;(<a href="../backend/Route.html" title="class in backend">Route</a>&nbsp;route,
+int&nbsp;amount,
+java.lang.String&nbsp;id,
+java.lang.String&nbsp;date)</code></th>
+<td class="colLast">
+<div class="block">Method for buying a ticket to a given route, should generate the price, based on the amount of tickets
+ and add a ticket to the stations on the route</div>
+</td>
+</tr>
+<tr class="altColor" id="i12">
 <td class="colFirst"><code><a href="../backend/Route.html" title="class in backend">Route</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shortestPath(backend.Station,backend.Station)">shortestPath</a></span>&#8203;(<a href="../backend/Station.html" title="class in backend">Station</a>&nbsp;a,
 <a href="../backend/Station.html" title="class in backend">Station</a>&nbsp;b)</code></th>
@@ -181,7 +222,11 @@ int&nbsp;amount)</code></th>
 <section class="detail">
 <h3><a id="getInstance()">getInstance</a></h3>
 <div class="memberSignature"><span class="modifiers">public static</span>&nbsp;<span class="returnType"><a href="Railspot.html" title="class in main">Railspot</a></span>&nbsp;<span class="memberName">getInstance</span>()</div>
-<div class="block">singleton</div>
+<div class="block">Method for the singleton pattern</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>instance of the class.</dd>
+</dl>
 </section>
 </li>
 <li class="blockList">
@@ -198,7 +243,12 @@ int&nbsp;amount)</code></th>
 <li class="blockList">
 <section class="detail">
 <h3><a id="deleteStation(backend.Station)">deleteStation</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">deleteStation</span>&#8203;(<span class="arguments"><a href="../backend/Station.html" title="class in backend">Station</a>&nbsp;station)</span></div>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">deleteStation</span>&#8203;(<span class="arguments"><a href="../backend/Station.html" title="class in backend">Station</a>&nbsp;station)</span>
+                   throws <span class="exceptions">java.io.IOException</span></div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code></dd>
+</dl>
 </section>
 </li>
 <li class="blockList">
@@ -218,20 +268,73 @@ int&nbsp;amount)</code></th>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="setMap(util.Graph.Graph)">setMap</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">setMap</span>&#8203;(<span class="arguments"><a href="../util/Graph/Graph.html" title="class in util.Graph">Graph</a>&lt;<a href="../backend/Station.html" title="class in backend">Station</a>&gt;&nbsp;map)</span></div>
-<div class="block">Set the map of the instance to a new one .</div>
+<h3><a id="purchaseTicket(backend.Route,int,java.lang.String,java.lang.String)">purchaseTicket</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../backend/Bill.html" title="class in backend">Bill</a></span>&nbsp;<span class="memberName">purchaseTicket</span>&#8203;(<span class="arguments"><a href="../backend/Route.html" title="class in backend">Route</a>&nbsp;route,
+int&nbsp;amount,
+java.lang.String&nbsp;id,
+java.lang.String&nbsp;date)</span></div>
+<div class="block">Method for buying a ticket to a given route, should generate the price, based on the amount of tickets
+ and add a ticket to the stations on the route</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>map</code> - </dd>
+<dd><code>route</code> - route object</dd>
+<dd><code>amount</code> - amount of tickets to buy</dd>
+<dd><code>id</code> - id of the client, for verification on trains</dd>
+<dd><code>date</code> - actual day of the buy</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Bill generated with the info of the purchase.</dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="purchaseTicket(backend.Route,int)">purchaseTicket</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">purchaseTicket</span>&#8203;(<span class="arguments"><a href="../backend/Route.html" title="class in backend">Route</a>&nbsp;route,
-int&nbsp;amount)</span></div>
+<h3><a id="connect(backend.Station,backend.Station,int)">connect</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">connect</span>&#8203;(<span class="arguments"><a href="../backend/Station.html" title="class in backend">Station</a>&nbsp;start,
+<a href="../backend/Station.html" title="class in backend">Station</a>&nbsp;end,
+int&nbsp;weight)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="getElements()">getElements</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../util/LinkedList.html" title="class in util">LinkedList</a>&lt;<a href="../backend/Station.html" title="class in backend">Station</a>&gt;</span>&nbsp;<span class="memberName">getElements</span>()</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="disconnect(backend.Station,backend.Station)">disconnect</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">disconnect</span>&#8203;(<span class="arguments"><a href="../backend/Station.html" title="class in backend">Station</a>&nbsp;station1,
+<a href="../backend/Station.html" title="class in backend">Station</a>&nbsp;station2)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="getReservationsByID(java.lang.String)">getReservationsByID</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../util/LinkedList.html" title="class in util">LinkedList</a>&lt;<a href="../backend/Ticket.html" title="class in backend">Ticket</a>&gt;</span>&nbsp;<span class="memberName">getReservationsByID</span>&#8203;(<span class="arguments">java.lang.String&nbsp;id)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="getReservationsByDate(java.lang.String)">getReservationsByDate</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../util/LinkedList.html" title="class in util">LinkedList</a>&lt;<a href="../backend/Ticket.html" title="class in backend">Ticket</a>&gt;</span>&nbsp;<span class="memberName">getReservationsByDate</span>&#8203;(<span class="arguments">java.lang.String&nbsp;date)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="getReservationsByStation(java.lang.String)">getReservationsByStation</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../util/LinkedList.html" title="class in util">LinkedList</a>&lt;<a href="../backend/Ticket.html" title="class in backend">Ticket</a>&gt;</span>&nbsp;<span class="memberName">getReservationsByStation</span>&#8203;(<span class="arguments">java.lang.String&nbsp;name)</span></div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="getMap()">getMap</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../util/graph/Graph.html" title="class in util.graph">Graph</a>&lt;<a href="../backend/Station.html" title="class in backend">Station</a>&gt;</span>&nbsp;<span class="memberName">getMap</span>()</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="getReservations()">getReservations</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="../util/LinkedList.html" title="class in util">LinkedList</a>&lt;<a href="../backend/Ticket.html" title="class in backend">Ticket</a>&gt;</span>&nbsp;<span class="memberName">getReservations</span>()</div>
 </section>
 </li>
 </ul>

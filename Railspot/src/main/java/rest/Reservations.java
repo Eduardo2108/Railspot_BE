@@ -1,13 +1,15 @@
 package rest;
 
 import backend.Ticket;
-import com.google.gson.Gson;
 import main.Railspot;
 import main.Settings;
 import util.LinkedList;
 import util.tools.Serializer;
 
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.logging.Level;
@@ -24,7 +26,6 @@ public class Reservations {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getByPerson(@QueryParam("id") String id) {
-        //todo: test
         try {
             LinkedList<Ticket> reservations = Railspot.getInstance().getReservationsByID(id);
             String json = Serializer.tickets(reservations);
@@ -51,7 +52,6 @@ public class Reservations {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getByRoute(@QueryParam("name") String name) {
-        //todo: test
 
         try {
             LinkedList<Ticket> reservations = Railspot.getInstance().getReservationsByStation(name);
@@ -80,12 +80,11 @@ public class Reservations {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getByDate(@QueryParam("date") String date) {
-        //todo: test
 
         try {
             LinkedList<Ticket> reservations = Railspot.getInstance().getReservationsByDate(date);
             String json = Serializer.tickets(reservations);
-            Settings.Loggers.ADMINISTRATION.log(Level.INFO, "Tickets asked by date: " + json);
+            Settings.Loggers.ADMINISTRATION.log(Level.INFO, ()->"Tickets asked by date: " + json);
 
             return javax.ws.rs.core.Response.
                     status(Response.Status.ACCEPTED).

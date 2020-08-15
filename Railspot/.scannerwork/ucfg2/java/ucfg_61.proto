@@ -1,0 +1,88 @@
+
+4util.graph.VertexHelper#toString()Ljava/lang/String;]
+SC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/VertexHelper.java ("1*š
+1]
+SC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/VertexHelper.java (¤
+¡
+]
+SC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/VertexHelper.java (
+%0java.lang.String"__concat*
+VertexHelper{*	
+weight=¦
+£
+]
+SC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/VertexHelper.java ("
+%1java.lang.String"__concat*
+
+%0java.lang.String*
+""ª
+§
+]
+SC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/VertexHelper.java (
+%2java.lang.String"__concat*
+
+%1java.lang.String*
+
+, pre=—
+”
+]
+SC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/VertexHelper.java (
+%3T"__id*$*"
+util.graph.VertexHelper"
+pre©
+¦
+]
+SC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/VertexHelper.java (
+%4java.lang.String"__concat*
+
+%2java.lang.String*	
+
+%3T«
+¨
+]
+SC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/VertexHelper.java (
+%5java.lang.String"__concat*
+
+%4java.lang.String*	
+, node=˜
+•
+]
+SC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/VertexHelper.java ( 
+%6T"__id*%*#
+util.graph.VertexHelper"
+node©
+¦
+]
+SC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/VertexHelper.java ( 
+%7java.lang.String"__concat*
+
+%5java.lang.String*	
+
+%6T®
+«
+]
+SC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/VertexHelper.java  (
+%8java.lang.String"__concat*
+
+%7java.lang.String*
+
+, visited=¦
+£
+]
+SC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/VertexHelper.java  (&
+%9java.lang.String"__concat*
+
+%8java.lang.String*
+""§
+¤
+]
+SC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/VertexHelper.java !(
+%10java.lang.String"__concat*
+
+%9java.lang.String*
+"""z
+]
+SC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/VertexHelper.java !(
+
+%10java.lang.StringB
+util.graph.VertexHelper

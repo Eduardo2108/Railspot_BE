@@ -1,4 +1,4 @@
-package util.Graph;
+package util.graph;
 
 import util.LinkedList;
 

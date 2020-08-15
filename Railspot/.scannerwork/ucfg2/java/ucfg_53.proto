@@ -1,0 +1,47 @@
+
+1util.graph.Vertex#compareTo(Lutil/graph/Vertex;)IW
+MC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/Vertex.java0 0("startingBlock*ù
+startingBlockW
+MC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/Vertex.java0 0(%†
+ù
+W
+MC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/Vertex.java/ /(
+%3"
+__annotate*
+java.lang.Override*
+
+outil.graph.Vertexä
+á
+W
+MC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/Vertex.java0# 0($
+outil.graph.Vertex"__annotation*
+
+%3*
+1*¥
+1W
+MC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/Vertex.java1 1(å
+â
+W
+MC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/Vertex.java1 1(
+%0T"__id**
+util.graph.Vertex"
+dataè
+å
+W
+MC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/Vertex.java1 1($
+%1T"__id*"* 
+
+outil.graph.Vertex"
+data—Œ
+W
+MC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/Vertex.java1 1(%	
+%2int"3java.lang.Comparable#compareTo(Ljava/lang/Object;)I*	
+
+%0T*	
+
+%1T2compareTo(Ljava/lang/Object;)"a
+W
+MC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/graph/Vertex.java1 1(&
+"":
+outil.graph.VertexB
+util.graph.Vertex

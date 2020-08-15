@@ -5,7 +5,7 @@ import backend.Route;
 import backend.Station;
 import backend.Ticket;
 import com.google.gson.reflect.TypeToken;
-import util.Graph.Graph;
+import util.graph.Graph;
 import util.LinkedList;
 
 import java.lang.reflect.Type;
@@ -41,7 +41,6 @@ public final class Settings {
 
     public enum Loggers {
         ;
-        //todo: implement all the loggers on its classes.
         public static final Logger BILL = Logger.getLogger("Bill");
         public static final Logger STATION = Logger.getLogger("Station");
         public static final Logger EDGE = Logger.getLogger("Edge");
@@ -54,6 +53,7 @@ public final class Settings {
         public static final Logger LIST = Logger.getLogger("LinkedList");
         public static final Logger ADMINISTRATION = Logger.getLogger("Rest_admin");
         public static final Logger TRAVELS = Logger.getLogger("Rest_travel");
+        public static final Logger RAILSPOT = Logger.getLogger("Main driver.") ;
     }
 
 

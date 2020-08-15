@@ -46,7 +46,7 @@ public abstract class Serializer {
 
     public static String stations(LinkedList<Station> list) {
         JsonArray array = new JsonArray();
-        for (int i = 0; i < list.len; i++) {
+        for (int i = 0; i < list.getLen(); i++) {
             array.add(list.getElement(i).getName());
         }
         return array.toString();
@@ -55,7 +55,7 @@ public abstract class Serializer {
     public static String tickets(LinkedList<Ticket> list) {
         JsonArray array = new JsonArray();
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < list.len; i++) {
+        for (int i = 0; i < list.getLen(); i++) {
             Ticket ticket = list.getElement(i);
             sb.append("Identificacion: ").append(ticket.getOwnerID()).append(" - ").
                     append("Fecha: ").append(ticket.getDate()).append(" - ").

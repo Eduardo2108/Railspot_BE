@@ -1,4 +1,4 @@
-package util.Graph;
+package util.graph;
 
 /**
  * This class can work for getting the pair of vertex - predecessor - weight for running dijkstra algorithm

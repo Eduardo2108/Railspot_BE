@@ -1,4 +1,4 @@
-package util.Graph;
+package util.graph;
 
 
 import util.LinkedList;
@@ -26,6 +26,7 @@ public class Graph<T extends Comparable<T>> {
      * Deleting a node from the graph
      *
      * @param element element to be deleted
+     * @throws IOException if the element is not on the graph
      */
     public void deleteElement(T element) throws IOException {
         this.elements.delete(new Vertex<>(element));
@@ -70,7 +71,7 @@ public class Graph<T extends Comparable<T>> {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Lista de adyacencia grafo: {").append("\n");
-        for (int i = 0; i < this.elements.len; i++) {
+        for (int i = 0; i < this.elements.getLen(); i++) {
             sb.append("Node: ").
                     append(elements.getElement(i).getData()).
                     append("Connections: ").append(elements.getElement(i).getEdges()).append("\n");
@@ -95,7 +96,7 @@ public class Graph<T extends Comparable<T>> {
         VertexHelper<Vertex<T>> sourceHelper = new VertexHelper<>(sourceNode);
         sourceHelper.setWeight(0);
         results.addFirst(sourceHelper);
-        for (int i = 0; i < this.elements.len; i++) {
+        for (int i = 0; i < this.elements.getLen(); i++) {
             if (elements.getElement(i).compareTo(sourceNode) != 0) {
                 //create a new instance with the content of the node, for each node on the list of elements in the graph
                 results.add(new VertexHelper<>(this.elements.getElement(i)));
@@ -108,7 +109,7 @@ public class Graph<T extends Comparable<T>> {
         while (current != null) {
             //connections of the current node.
             LinkedList<Edge<T>> currentConnections = current.getNode().getEdges();
-            for (int i = 0; i < currentConnections.len; i++) {
+            for (int i = 0; i < currentConnections.getLen(); i++) {
                 // find the equivalent and ask
                 Edge<T> connectionsElement = currentConnections.getElement(i);
                 VertexHelper<Vertex<T>> connectionComponent = results.getElement(new VertexHelper<>(connectionsElement.getConnection()));
@@ -150,7 +151,7 @@ public class Graph<T extends Comparable<T>> {
 
     private VertexHelper<Vertex<T>> findNext(LinkedList<VertexHelper<Vertex<T>>> list) {
         VertexHelper<Vertex<T>> result = null;
-        for (int i = 0; i < list.len; i++) {
+        for (int i = 0; i < list.getLen(); i++) {
             VertexHelper<Vertex<T>> element = list.getElement(i);
             if (!element.visited) {
                 if (result == null) {
@@ -165,7 +166,7 @@ public class Graph<T extends Comparable<T>> {
 
     public LinkedList<T> getElements() {
         LinkedList<T> result = new LinkedList<>();
-        for (int i = 0; i < this.elements.len; i++) {
+        for (int i = 0; i < this.elements.getLen(); i++) {
             result.add(this.elements.getElement(i).getData());
         }
         return result;

@@ -137,7 +137,7 @@ public class Admin {
     @Path("/percentage")
     public String disc(@QueryParam("num") int amount,
                        @QueryParam("price") int price) {
-        double priceKm = price * amount;
+        double priceKm = price * (double)amount;
         double discount = ((amount <= 46) ? ((amount - 1) * 0.02) : (0.90)) * priceKm;
         return String.valueOf(discount);
     }

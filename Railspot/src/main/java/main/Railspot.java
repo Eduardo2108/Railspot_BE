@@ -4,13 +4,13 @@ import backend.Bill;
 import backend.Route;
 import backend.Station;
 import backend.Ticket;
-import util.Graph.Graph;
+import util.graph.Graph;
 import util.LinkedList;
 import util.tools.JsonWriter;
 import util.tools.jsonReader;
 
 import java.io.IOException;
-//todo: login on files reading
+import java.util.logging.Level;
 
 /**
  * Driver class for the server, facade for the management of the router, buys and configurations of the server
@@ -20,11 +20,11 @@ public class Railspot {
      * Field for the singleton
      */
     private static Railspot instance;
-    private LinkedList<Ticket> reservations;
+    private final LinkedList<Ticket> reservations;
     /**
      * Field for the stations on a directed graph
      */
-    private Graph<Station> map;
+    private final Graph<Station> map;
 
     /**
      * Constructor
@@ -35,7 +35,8 @@ public class Railspot {
     }
 
     /**
-     * singleton
+     * Method for the singleton pattern
+     * @return instance of the class.
      */
     public static synchronized Railspot getInstance() {
         if (instance == null) {
@@ -56,7 +57,7 @@ public class Railspot {
     }
 
     public void deleteStation(Station station) throws IOException {
-        if (this.getMap().getElements().getElement(station).getTickets().len != 0) {
+        if (this.getMap().getElements().getElement(station).getTickets().getLen() != 0) {
             throw new IllegalArgumentException("La estación tiene tiquetes activos, no se puede eliminar.");
         }
         this.map.deleteElement(station);
@@ -90,17 +91,17 @@ public class Railspot {
      */
     public Bill purchaseTicket(Route route, int amount, String id, String date) {
         try {
-            int discount = ((amount <= 46)&&amount>1) ? amount * 2 : 90;
+            int discount = ((amount <= 46) && amount > 1) ? amount * 2 : 90;
             double price = (route.getDistance()) * Settings.Constants.PRICE_KM * ((double) discount / 100);
             Bill bill = new Bill.Builder().price(price).date(date).id(id).build();
             Ticket ticket = new Ticket(price, id, date);
             route.addTicket(ticket);
             this.reservations.add(ticket);
-            System.out.println("ticked bought");
+            Settings.Loggers.RAILSPOT.log(Level.INFO, "ticked bought");
             JsonWriter.updateReservations();
             return bill;
         } catch (Exception e) {
-            System.out.println(e.getCause());
+            Settings.Loggers.RAILSPOT.log(Level.WARNING, e.getMessage());
             return null;
         }
 
@@ -111,7 +112,8 @@ public class Railspot {
         try {
             this.map.connect(start, end, weight);
             JsonWriter.updateGraph();
-        } catch (Exception ignored) {
+        } catch (Exception e) {
+            Settings.Loggers.RAILSPOT.log(Level.WARNING, e.getMessage());
 
         }
     }
@@ -129,7 +131,7 @@ public class Railspot {
 
     public LinkedList<Ticket> getReservationsByID(String id) {
         LinkedList<Ticket> results = new LinkedList<>();
-        for (int i = 0; i < this.reservations.len; i++) {
+        for (int i = 0; i < this.reservations.getLen(); i++) {
             if (this.reservations.getElement(i).getOwnerID().equals(id))
                 results.add(this.reservations.getElement(i));
         }
@@ -138,7 +140,7 @@ public class Railspot {
 
     public LinkedList<Ticket> getReservationsByDate(String date) {
         LinkedList<Ticket> results = new LinkedList<>();
-        for (int i = 0; i < this.reservations.len; i++) {
+        for (int i = 0; i < this.reservations.getLen(); i++) {
             if (this.reservations.getElement(i).getDate().equals(date))
                 results.add(this.reservations.getElement(i));
         }
@@ -151,15 +153,6 @@ public class Railspot {
 
     public Graph<Station> getMap() {
         return this.map;
-    }
-
-    /**
-     * Set the map of the instance to a new one .
-     *
-     * @param map
-     */
-    public void setMap(Graph<Station> map) {
-        this.map = map;
     }
 
     public LinkedList<Ticket> getReservations() {

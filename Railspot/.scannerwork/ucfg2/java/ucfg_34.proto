@@ -1,0 +1,96 @@
+
+Hutil.LinkedList#getElement(Ljava/lang/Comparable;)Ljava/lang/Comparable;U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaL L("8*–
+2U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaV V(«¨
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaV V(!
+%6	util.Node"util.Node#getNext()Lutil/Node;*
+
+temp	util.Node2	getNext()†
+ƒ
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaV V(!
+temp	util.Node"__id*
+
+%6	util.Node*
+5*ã
+3U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaS S(ˆ
+…
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaS S("
+%5T"__id**
+
+temp	util.Node"
+dataw
+u
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaS S("
+resultT"__id*	
+
+%5T*
+1*ç
+4U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaR R(®«
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaR R(
+%3T")util.Node#getData()Ljava/lang/Comparable;*
+
+temp	util.Node2	getData()ÑÎ
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaR R(.	
+%4int"3java.lang.Comparable#compareTo(Ljava/lang/Object;)I*	
+
+%3T*
+	
+dataT2compareTo(Ljava/lang/Object;)*
+2
+3*„
+5U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaQ Q(Ÿœ
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaQ Q(&	
+%2int"util.LinkedList#getLen()I*
+util.LinkedList2getLen()*
+4
+1*œ
+6U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaO O(±®
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaO O(%
+%1	util.Node"$util.LinkedList#getHead()Lutil/Node;*
+util.LinkedList2	getHead()†
+ƒ
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaO O(&
+temp	util.Node"__id*
+
+%1	util.Node*
+5*»
+7U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaN+ N(/"_
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaN$ N(0
+""*Œ
+8U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaM M(t
+r
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaM M(
+resultT"__id*
+""±®
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaN N(
+%0	util.Node"$util.LinkedList#getHead()Lutil/Node;*
+util.LinkedList2	getHead()*
+6
+7*Â
+1U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaY Y("f
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.javaY Y(
+
+resultT:	
+dataTB
+util.LinkedList

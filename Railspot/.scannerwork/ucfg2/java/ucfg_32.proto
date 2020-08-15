@@ -1,0 +1,82 @@
+
+,util.LinkedList#toString()Ljava/lang/String;U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java* *("7*…
+3U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java0 0(ƒ¡
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java0 0(,
+%5T"3util.LinkedList#getElement(I)Ljava/lang/Comparable;*
+util.LinkedList*
+""2getElement(I)íè
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java0 0(-
+%6java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/Object;)Ljava/lang/StringBuilder;*#
+!
+stringjava.lang.StringBuilder*	
+
+%5T2append(Ljava/lang/Object;)ãà
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java0 0(:
+%7java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;*
+
+%6java.lang.StringBuilder*
+, 2append(Ljava/lang/String;)*
+4*Ñ
+4U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java/ /(üú
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java/ /()	
+%4int"util.LinkedList#getLen()I*
+util.LinkedList2getLen()*
+3
+1*œ
+5U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java. .(2íè
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java.# .(0
+%1java.lang.StringBuilder"java.lang.StringBuilder§
+°
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java. .(2
+%2"!java.lang.StringBuilder#<init>()V*
+
+%1java.lang.StringBuilderäá
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java. .(>
+%3java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;*
+
+%1java.lang.StringBuilder*
+[2append(Ljava/lang/String;)§
+°
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java. .(?!
+stringjava.lang.StringBuilder"__id*
+
+%3java.lang.StringBuilder*
+4*ª
+6U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java, ,("_
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java, ,(
+[]*ñ
+7U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java+ +(±Æ
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java+ +(
+%0	util.Node"$util.LinkedList#getHead()Lutil/Node;*
+util.LinkedList2	getHead()*
+5
+6*©
+1U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java2 2(Ÿ÷
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java2 2( 
+%8java.lang.String"4java.lang.StringBuilder#toString()Ljava/lang/String;*#
+!
+stringjava.lang.StringBuilder2
+toString()"q
+U
+KC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/util/LinkedList.java2 2(!
+
+%8java.lang.StringB
+util.LinkedList

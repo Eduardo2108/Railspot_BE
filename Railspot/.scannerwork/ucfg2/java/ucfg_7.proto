@@ -1,0 +1,53 @@
+
+*backend.Bill$Builder#build()Lbackend/Bill;R
+HC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Bill.java+ +("1*Í	
+1R
+HC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Bill.java, ,(%xv
+R
+HC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Bill.java, ,(#
+%0backend.Bill"backend.Bill‹
+ˆ
+R
+HC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Bill.java, ,(%
+%1"backend.Bill#<init>()V*
+
+%0backend.BillŒ
+‰
+R
+HC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Bill.java, ,(&
+newBillbackend.Bill"__id*
+
+%0backend.Bill™
+–
+R
+HC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Bill.java- -($
+%2java.lang.String"__id*"* 
+backend.Bill$Builder"
+dateš
+—
+R
+HC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Bill.java- -($!
+
+newBillbackend.Bill"
+date"__id*
+
+%2java.lang.String—
+”
+R
+HC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Bill.java. .( 
+%3java.lang.String"__id* *
+backend.Bill$Builder"
+id˜
+•
+R
+HC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Bill.java. .( 
+
+newBillbackend.Bill"
+id"__id*
+
+%3java.lang.String"o
+R
+HC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Bill.java0 0(
+
+newBillbackend.BillB
+backend.Bill$Builder

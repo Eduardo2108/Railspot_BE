@@ -58,7 +58,7 @@ public class Travel {
     public Response getAllStations() {
         try {
             String stationsJson = Serializer.stations(Railspot.getInstance().getElements());
-            Settings.Loggers.TRAVELS.log(Level.INFO, ()->"Stations: " + stationsJson);
+            Settings.Loggers.TRAVELS.log(Level.INFO, () -> "Stations: " + stationsJson);
             return Response.status(Response.Status.ACCEPTED).
                     entity(stationsJson).
                     type(MediaType.APPLICATION_JSON_TYPE).
@@ -88,9 +88,8 @@ public class Travel {
             Station startPoint = Railspot.getInstance().getElements().getElement(new Station(starting));
             Station endPoint = Railspot.getInstance().getElements().getElement(new Station(ending));
             Route route = Railspot.getInstance().shortestPath(startPoint, endPoint);
-            System.out.println(route);
             String routeString = Serializer.route(route);
-            Settings.Loggers.TRAVELS.log(Level.INFO, "Route calc: " + routeString);
+            Settings.Loggers.TRAVELS.log(Level.INFO, ()->"Route calc: " + routeString);
             return Response.status(Response.Status.ACCEPTED).entity(route.getPrice()).type(MediaType.APPLICATION_JSON_TYPE).build();
         } catch (Exception e) {
             Settings.Loggers.TRAVELS.log(Level.SEVERE, e.getMessage());

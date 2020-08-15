@@ -1,0 +1,73 @@
+
+*backend.Route#toString()Ljava/lang/String;S
+IC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Route.java& &("5*‡
+3S
+IC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Route.java) )(äá
+S
+IC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Route.java) )(
+%2java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;*
+
+sbjava.lang.StringBuilder*
+-->2append(Ljava/lang/String;)Ì
+S
+IC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Route.java) )(E
+%3"Kjava.lang.StringBuilder#append(Ljava/lang/Object;)Ljava/lang/StringBuilder;*
+
+%2java.lang.StringBuilder*
+""2append(Ljava/lang/Object;)*
+3
+1*◊
+5S
+IC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Route.java'3 '(;êç
+S
+IC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Route.java'% '(2
+%0java.lang.StringBuilder"java.lang.StringBuilder¿
+Ω
+S
+IC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Route.java'! '(<
+%1"3java.lang.StringBuilder#<init>(Ljava/lang/String;)V*
+
+%0java.lang.StringBuilder*
+
+Route{û
+õ
+S
+IC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Route.java' '(=
+sbjava.lang.StringBuilder"__id*
+
+%0java.lang.StringBuilder*
+3
+1*Ö	
+1S
+IC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Route.java+ +(
+èå
+S
+IC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Route.java+ +(
+%4java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;*
+
+sbjava.lang.StringBuilder*
+
+, price=2append(Ljava/lang/String;)Á‰
+S
+IC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Route.java+ +(.
+%5java.lang.StringBuilder":java.lang.StringBuilder#append(I)Ljava/lang/StringBuilder;*
+
+%4java.lang.StringBuilder*
+""2	append(I)Á‰
+S
+IC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Route.java, ,(
+%6java.lang.StringBuilder":java.lang.StringBuilder#append(C)Ljava/lang/StringBuilder;*
+
+sbjava.lang.StringBuilder*
+""2	append(C)”–
+S
+IC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Route.java- -(
+%7java.lang.String"4java.lang.StringBuilder#toString()Ljava/lang/String;*
+
+sbjava.lang.StringBuilder2
+toString()"o
+S
+IC:/Users/eduar/Desktop/Railspot/Railspot/src/main/java/backend/Route.java- -(
+
+%7java.lang.StringB
+backend.Route

@@ -142,18 +142,30 @@ extends java.lang.Object</pre>
 <tbody>
 <tr class="altColor" id="i0">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#buy(java.lang.String)">buy</a></span>&#8203;(java.lang.String&nbsp;routeJson)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#buy(java.lang.String,java.lang.String,int,java.lang.String,java.lang.String)">buy</a></span>&#8203;(java.lang.String&nbsp;start,
+java.lang.String&nbsp;end,
+int&nbsp;cant,
+java.lang.String&nbsp;date,
+java.lang.String&nbsp;id)</code></th>
+<td class="colLast">
+<div class="block">Method for buying a ticket, and adding it to the stations
+ The route was previous calculated by server and this method is just for confirmation of the purchase.</div>
+</td>
 </tr>
 <tr class="rowColor" id="i1">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#calcRoute()">calcRoute</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#calcRoute(java.lang.String,java.lang.String)">calcRoute</a></span>&#8203;(java.lang.String&nbsp;starting,
+java.lang.String&nbsp;ending)</code></th>
+<td class="colLast">
+<div class="block">Method for getting the calculation of a route, from a to b.</div>
+</td>
 </tr>
 <tr class="altColor" id="i2">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAllstations()">getAllstations</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAllStations()">getAllStations</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Method for getting all the list of stations</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -195,29 +207,67 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <section class="detail">
-<h3><a id="buy(java.lang.String)">buy</a></h3>
+<h3><a id="buy(java.lang.String,java.lang.String,int,java.lang.String,java.lang.String)">buy</a></h3>
 <div class="memberSignature"><span class="annotations">@POST
-@Consumes("application/json")
+@Consumes("text/plain")
 @Path("/buy")
-</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">buy</span>&#8203;(<span class="arguments">@QueryParam("route")
-java.lang.String&nbsp;routeJson)</span></div>
+</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">buy</span>&#8203;(<span class="arguments">@QueryParam("start")
+java.lang.String&nbsp;start,
+@QueryParam("end")
+java.lang.String&nbsp;end,
+@QueryParam("cant")
+int&nbsp;cant,
+@QueryParam("date")
+java.lang.String&nbsp;date,
+@QueryParam("id")
+java.lang.String&nbsp;id)</span></div>
+<div class="block">Method for buying a ticket, and adding it to the stations
+ The route was previous calculated by server and this method is just for confirmation of the purchase.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>start</code> - start station</dd>
+<dd><code>end</code> - ending route.</dd>
+<dd><code>cant</code> - amount of tickets to buy</dd>
+<dd><code>date</code> - String format of the date of the purchase</dd>
+<dd><code>id</code> - id of the customer</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Accepted code and the json format of the corresponding bill
+ Internal server error if problems</dd>
+</dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="getAllstations()">getAllstations</a></h3>
+<h3><a id="getAllStations()">getAllStations</a></h3>
 <div class="memberSignature"><span class="annotations">@GET
 @Path("/all")
-</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">getAllstations</span>()</div>
+@Produces("application/json")
+</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">getAllStations</span>()</div>
+<div class="block">Method for getting all the list of stations</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>json format of the list of stations.</dd>
+</dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="calcRoute()">calcRoute</a></h3>
+<h3><a id="calcRoute(java.lang.String,java.lang.String)">calcRoute</a></h3>
 <div class="memberSignature"><span class="annotations">@GET
-@Consumes("text/plain")
+@Produces("text/plain")
 @Path("/calc")
-</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">calcRoute</span>()</div>
+</span><span class="modifiers">public</span>&nbsp;<span class="returnType">javax.ws.rs.core.Response</span>&nbsp;<span class="memberName">calcRoute</span>&#8203;(<span class="arguments">@QueryParam("start")
+java.lang.String&nbsp;starting,
+@QueryParam("end")
+java.lang.String&nbsp;ending)</span></div>
+<div class="block">Method for getting the calculation of a route, from a to b.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>starting</code> - Name of the start station.</dd>
+<dd><code>ending</code> - Name of the ending station.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the route, with the price and the stations to pass.</dd>
+</dl>
 </section>
 </li>
 </ul>

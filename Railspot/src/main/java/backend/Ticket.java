@@ -1,5 +1,7 @@
 package backend;
 
+import java.util.Objects;
+
 public class Ticket implements Comparable<Ticket> {
     private double price;
     private String date;
@@ -14,6 +16,21 @@ public class Ticket implements Comparable<Ticket> {
     @Override
     public int compareTo(Ticket o) {
         return 0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ticket ticket = (Ticket) o;
+        return Double.compare(ticket.price, price) == 0 &&
+                Objects.equals(date, ticket.date) &&
+                Objects.equals(ownerID, ticket.ownerID);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(price, date, ownerID);
     }
 
     public double getPrice() {
